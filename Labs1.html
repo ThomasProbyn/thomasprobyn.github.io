@@ -1,6 +1,6 @@
 <body>
     <h1>Hello!</h1>
-    <p id="clicky" onclick="clickyText(this.id)">I'm doing Web Development!</p>
+    <p id="clicky" onclick="makeBold(this.id)">I'm doing Web Development!</p>
 </body>
 <style>
     body {
@@ -8,12 +8,12 @@
     }
 </style>
 <script>
-    function clickyText(elmt) {
-        elmt = document.getElementById(elmt)
+    function makeBold(elmt) {
+        elmt = document.getElementById(clicky)
         if (elmt.style.fontWeight == "900") {
-            elmt.style.fontWeight == "400"
+            elmt.style.fontWeight = "400"
         } else {
-            elmt.style.fontWeight == "900"
+            elmt.style.fontWeight = "900"
         }
     }
 </script>
