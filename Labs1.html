@@ -1,9 +1,19 @@
 <body>
     <h1>Hello!</h1>
-    <p>I'm doing </p>
+    <p id="clicky" onclick="clickyText(this.id)">I'm doing Web Development!</p>
 </body>
 <style>
     body {
         font-family: 'Courier New', Courier, monospace;
     }
 </style>
+<script>
+    function clickyText(elmt) {
+        elmt = document.getElementById(elmt)
+        if (elmt.style.fontWeight == "900") {
+            elmt.style.fontWeight == "400"
+        } else {
+            elmt.style.fontWeight == "900"
+        }
+    }
+</script>
