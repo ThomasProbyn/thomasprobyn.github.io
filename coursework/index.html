@@ -1,0 +1,54 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<style>
+    .colourBigText {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 7rem;
+        margin: 0px;
+        display: inline;
+    }
+    [contenteditable] {
+        outline: 0px solid transparent;
+    }
+    #userType {
+        color: #2adba6;
+    }
+    body {
+        color: white;
+        background-color: #1a1a28;
+    }
+    #search {
+        margin-top: 10%;
+    }
+    #tagline {
+        font-family: 'Quicksand', sans-serif;
+        margin-top: 40px;
+        font-size: 1.5rem;
+    }
+</style>
+<body>
+    <div id="search" align="center">
+        <p class="colourBigText" id="staticBigText">I have <div id="userType" onblur="restoreText(this.id)" onclick="clearText(this.id)" contenteditable="true" class="colourBigText">these ingredients. </div></p>
+        <p id="tagline">Tell us what ingredients you have in, and we'll find some recipies for you.</p>
+    </div>
+</body>
+<script>
+    function clearText(id) {
+        if (document.getElementById(id).innerHTML == "these ingredients. ") {
+            document.getElementById(id).innerHTML = ""
+        }
+    }
+    function restoreText(id) {
+        if (document.getElementById(id).innerHTML == "") {
+            document.getElementById(id).innerHTML = "these ingredients. "
+        }
+    }
+    const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+        if (isMobile) {
+            document.getElementById("staticBigText").style.fontSize = "3rem"
+            document.getElementById("userType").style.fontSize = "3rem"
+            document.getElementById("tagline").style.fontSize = "1rem"
+        }
+</script>
