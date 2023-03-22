@@ -57,3 +57,7 @@ window.onresize = function () {
         document.getElementById("media-player-title").style.fontSize = "33px"
     }
 }
+
+function downloadSongs(albumIndex) {
+    window.location.href = indexObject.albums[albumIndex].downloadURL
+}

@@ -25,7 +25,7 @@ indexObject = {
                 "Year" : "2023",
                 "Season" : "Spring"
             },
-            "downloadURL" : "./rsc/audio/day-one/dayone.zip"
+            "downloadURL" : "./rsc/audio/day-one/day-one-all-songs.zip"
         }    
     ]
 }
