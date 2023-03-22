@@ -13,13 +13,13 @@
         <div class="site-background-colour element-template-navbar-horizontal">
             <h1 class="primary-text-colour primary-text-font text-type-title">Thomas Probyn</h1>
             <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Music</a>
-            <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Photography</a>
-            <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Web design</a>
-            <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Video</a>
+            <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Photography</a> -->
+            <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Web design</a> -->
+            <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Video</a> -->
         </div>
         <!-- Promotional Section -->
         <div class="primary-promotional-section">
-            <div class="primary-promotional-section-left">
+            <div class="primary-promotional-section-left" id="primary-promotional-section-left">
                 <h1 class="primary-promotional-section-title primary-text-colour primary-text-font">Day One</h1>
                 <p class="primary-promotional-section-subtext primary-text-colour primary-text-font">New EP ● Out Now</p>
                 <img class="icon-play" src="./rsc/icon/icon-play-rounded-filled.png" onclick="queue.push({'releaseID':0,'trackID':0}, {'releaseID':0,'trackID':1}, {'releaseID':0,'trackID':2}, {'releaseID':0,'trackID':3});startPlayer()">
@@ -32,7 +32,7 @@
                 <hr class="song-list-divider">
                 <h2 class="primary-text-colour primary-text-font song-list-title" style="margin-bottom: 100px;" onclick="queue=[];queue.push({'releaseID':0,'trackID':3});startPlayer()">4. Now I'm Here</h2>
             </div>
-            <div class="primary-promotional-section-right">
+            <div class="primary-promotional-section-right" id="primary-promotional-section-right">
                 <img src="./rsc/img/day-one/Promo.jpeg" class="primary-promotional-section-image">
                 <a class="primary-promotional-section-link primary-text-colour primary-text-font" onclick="startPlayer('a', 0, 0, 'c')">Listen now for free</a>
             </div>

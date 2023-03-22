@@ -37,7 +37,7 @@
     font-size: 70pt;
     position: relative;
     margin-top: 30%;
-    margin-left: 80px;
+    /* margin-left: 80px; */
     margin-bottom: 0px;
     margin-right: 0px;
 }
@@ -45,7 +45,7 @@
     font-weight: 400;
     font-size: 15pt;
     position: relative;
-    margin-left: 80px;
+    /* margin-left: 80px; */
     margin-right: 0px;
     margin-top: 22px;
 }
@@ -57,6 +57,7 @@
 }
 .primary-promotional-section-left {
     float: left;
+    padding-left:80px;
 }
 .primary-promotional-section-right {
     float: right;
@@ -67,7 +68,7 @@
     display: block;
 }
 .icon-play {
-    margin-left: 80px;
+    /* margin-left: 80px; */
     width: 50px;
 }
 .icon-download {
@@ -98,18 +99,24 @@
     font-weight: 700;
     font-size: 33px;
     margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .media-player-subtext {
     margin: 0px;
     margin-bottom: 10px;
     margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .song-list-title {
-    margin-left: 80px;
+    /* margin-left: 80px; */
     font-weight: 400;
 }
 .song-list-divider {
-    margin-left:75px;
+    margin-left:-5px;
 }
 .base-spacer {
     height: 100px;
