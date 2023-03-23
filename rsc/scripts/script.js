@@ -46,7 +46,6 @@ if (width < 1100) {
 
 window.onresize = function () {
     width = window.innerWidth
-    console.log(width)
     if (width < 1100) {
         document.getElementById("primary-promotional-section-right").hidden = true
         document.getElementById("primary-promotional-section-left").style.paddingLeft = "10px"
