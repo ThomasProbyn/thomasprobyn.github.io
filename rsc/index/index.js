@@ -46,6 +46,11 @@ indexObject = {
                     "daw" : "FL Studio",
                 },
                 {
+                    "name" : "Truth is in your eyes",
+                    "url" : "./rsc/audio/the-classics/eyes.mp3",
+                    "daw" : "Ableton Live",
+                },
+                {
                     "name" : "Travelling",
                     "url" : "./rsc/audio/the-classics/travelling.mp3",
                     "daw" : "FL Studio",
@@ -54,11 +59,6 @@ indexObject = {
                     "name" : "Always There",
                     "url" : "./rsc/audio/the-classics/always.mp3",
                     "daw" : "FL Studio",
-                },
-                {
-                    "name" : "Truth is in your eyes",
-                    "url" : "./rsc/audio/the-classics/eyes.mp3",
-                    "daw" : "Ableton Live",
                 },
             ],
             "data" : {
