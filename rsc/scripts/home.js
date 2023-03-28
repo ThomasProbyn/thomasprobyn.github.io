@@ -5,19 +5,3 @@ window.addEventListener("load", (event) => {
     }
 })
 
-width = window.innerWidth
-console.log(width)
-if (width < 1100) {
-    document.getElementById("primary-promotional-section-left").style.paddingLeft = "10px"
-} else {
-    document.getElementById("primary-promotional-section-left").style.paddingLeft = "80px"
-}
-
-window.onresize = function () {
-    width = window.innerWidth
-    if (width < 1100) {
-        document.getElementById("primary-promotional-section-left").style.paddingLeft = "10px"
-    } else {
-        document.getElementById("primary-promotional-section-left").style.paddingLeft = "80px"
-    }
-}
