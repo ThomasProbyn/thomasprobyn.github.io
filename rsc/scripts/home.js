@@ -8,22 +8,16 @@ window.addEventListener("load", (event) => {
 width = window.innerWidth
 console.log(width)
 if (width < 1100) {
-    document.getElementById("primary-promotional-section-right").hidden = true
     document.getElementById("primary-promotional-section-left").style.paddingLeft = "10px"
 } else {
-    document.getElementById("primary-promotional-section-right").hidden = false
     document.getElementById("primary-promotional-section-left").style.paddingLeft = "80px"
 }
 
 window.onresize = function () {
     width = window.innerWidth
     if (width < 1100) {
-        document.getElementById("primary-promotional-section-right").hidden = true
         document.getElementById("primary-promotional-section-left").style.paddingLeft = "10px"
-        document.getElementById("media-player-title").style.fontSize = "20px"
     } else {
-        document.getElementById("primary-promotional-section-right").hidden = false
         document.getElementById("primary-promotional-section-left").style.paddingLeft = "80px"
-        document.getElementById("media-player-title").style.fontSize = "33px"
     }
 }
