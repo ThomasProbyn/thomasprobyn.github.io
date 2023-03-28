@@ -26,6 +26,6 @@ indexObject = {
                 "season" : "Spring"
             },
             "downloadURL" : "./rsc/audio/day-one/day-one-all-songs.zip"
-        }    
+        },  
     ]
 }

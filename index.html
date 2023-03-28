@@ -13,41 +13,14 @@
         <!-- Navbar -->
         <div class="site-background-colour element-template-navbar-horizontal">
             <h1 class="primary-text-colour primary-text-font text-type-title" id="tabTitle">Thomas Probyn</h1>
-            <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Music</a>
+            <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal" href="./index.html">Music</a>
             <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Photography</a> -->
             <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Web design</a> -->
             <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Video</a> -->
         </div>
-        <!-- Promotional Section -->
-        <div class="primary-promotional-section">
-            <div class="primary-promotional-section-left" id="primary-promotional-section-left">
-                <h1 class="primary-promotional-section-title primary-text-colour primary-text-font">Day One</h1>
-                <p class="primary-promotional-section-subtext primary-text-colour primary-text-font">New EP ● Out Now</p>
-                <img class="icon-play" src="./rsc/icon/icon-play-rounded-filled.png" onclick="queue.push({'releaseID':0,'trackID':0}, {'releaseID':0,'trackID':1}, {'releaseID':0,'trackID':2}, {'releaseID':0,'trackID':3});startPlayer()">
-                <img class="icon-download" src="./rsc/icon/icon-download-rounded-filled.png" onclick="downloadSongs(0)">
-                <h2 class="primary-text-colour primary-text-font song-list-title" style="margin-top: 70px;" onclick="queue=[];queue.push({'releaseID':0,'trackID':0});startPlayer()">1. All Falls Away</h2>
-                <hr class="song-list-divider">
-                <h2 class="primary-text-colour primary-text-font song-list-title" onclick="queue=[];queue.push({'releaseID':0,'trackID':1});startPlayer()">2. Boys don't cry</h2>
-                <hr class="song-list-divider">
-                <h2 class="primary-text-colour primary-text-font song-list-title" onclick="queue=[];queue.push({'releaseID':0,'trackID':2});startPlayer()">3. Put together, Pulled apart</h2>
-                <hr class="song-list-divider">
-                <h2 class="primary-text-colour primary-text-font song-list-title" style="margin-bottom: 100px;" onclick="queue=[];queue.push({'releaseID':0,'trackID':3});startPlayer()">4. Now I'm Here</h2>
-            </div>
-            <div class="primary-promotional-section-right" id="primary-promotional-section-right">
-                <img src="./rsc/img/day-one/Promo.jpeg" class="primary-promotional-section-image">
-                <a class="primary-promotional-section-link primary-text-colour primary-text-font" onclick="startPlayer('a', 0, 0, 'c')">Listen now for free</a>
-            </div>
-        </div>
-        <!-- Media Player Footer -->
-        <div class="media-player-parent-element">
-            <img src="" id="media-player-image" class="media-player-preview-image">
-            <div class="media-player-text-block">
-                <audio id="audio-player" src="" autoplay></audio>
-                <p class="primary-text-font primary-text-colour media-player-title" id="media-player-title">Nothing Playing</p>
-                <p class="primary-text-font primary-text-colour media-player-subtext" id="media-player-subtext">Select a song or album to start playing</p>
-            </div>
+        <div class="home-page-promotion-section" id="home-page-promotion-section">
         </div>
     </body>
-    <script src="./rsc/scripts/script.js"></script>
+    <script src="./rsc/scripts/home.js"></script>
     <script src="./rsc/index/index.js"></script>
 </html>

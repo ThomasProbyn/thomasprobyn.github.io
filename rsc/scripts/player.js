@@ -1,6 +1,8 @@
 queue = []
 
-albumIndex = 0
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+albumIndex = urlParams.get('album')
 
 window.addEventListener("load", (event) => {
     document.getElementById("album-main-title-text").innerHTML = indexObject.albums[albumIndex].name
@@ -29,6 +31,7 @@ window.addEventListener("load", (event) => {
         albumQueueObjectArray.push({'releaseID':albumIndex, 'trackID':i})
     }
     document.getElementById("main-album-controls").innerHTML =  document.getElementById("main-album-controls").innerHTML + ' <img class="icon-play" src="./rsc/icon/icon-play-rounded-filled.png" onclick=\'queue=[];queue.push(' + JSON.stringify(albumQueueObjectArray).substring(1, JSON.stringify(albumQueueObjectArray).length-1) + ');startPlayer()\'><img class="icon-download" src="./rsc/icon/icon-download-rounded-filled.png" onclick="downloadSongs(' + albumIndex + ')">'
+    document.getElementById("primary-promotional-section-image").src = indexObject.albums[albumIndex].image
 })
 
 
