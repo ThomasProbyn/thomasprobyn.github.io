@@ -1,5 +1,40 @@
 queue = []
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+albumIndex = urlParams.get('album')
+
+window.addEventListener("load", (event) => {
+    document.getElementById("album-main-title-text").innerHTML = indexObject.albums[albumIndex].name
+    document.getElementById("album-main-release-date").innerHTML = indexObject.albums[albumIndex].data.season + " " + indexObject.albums[albumIndex].data.year
+    albumQueueObjectArray = []
+    // dynamically place all contents on page
+    for (i = 0; i < indexObject.albums[albumIndex].tracks.length; i++) {
+        //For every track in the album
+        if (i == 0) {
+            styleData = "style=\"margin-top: 70px;\""
+        } else {
+            if (i == indexObject.albums[albumIndex].tracks.length-1) {
+                styleData = "style=\"margin-bottom: 100px;\""
+            } else {
+                styleData = ""
+            }
+        }
+        if (i != indexObject.albums[albumIndex].tracks.length-1) {
+            divider = "<hr class=\"song-list-divider\"></hr>"
+        } else {
+            divider = ""
+        }
+
+        
+        document.getElementById("primary-promotional-section-left").innerHTML =  document.getElementById("primary-promotional-section-left").innerHTML + '<h2 class="primary-text-colour primary-text-font song-list-title" ' + styleData + ' onclick="queue=[];queue.push({\'releaseID\':' + albumIndex + ',\'trackID\':' + i + '});startPlayer()">' + (i+1) + '. ' + indexObject.albums[albumIndex].tracks[i].name + '</h2>'+ divider +''
+        albumQueueObjectArray.push({'releaseID':albumIndex, 'trackID':i})
+    }
+    document.getElementById("main-album-controls").innerHTML =  document.getElementById("main-album-controls").innerHTML + ' <img class="icon-play" src="./rsc/icon/icon-play-rounded-filled.png" onclick=\'queue=[];queue.push(' + JSON.stringify(albumQueueObjectArray).substring(1, JSON.stringify(albumQueueObjectArray).length-1) + ');startPlayer()\'><img class="icon-download" src="./rsc/icon/icon-download-rounded-filled.png" onclick="downloadSongs(' + albumIndex + ')">'
+    document.getElementById("primary-promotional-section-image").src = indexObject.albums[albumIndex].image
+})
+
+
 function startPlayer() {
     console.log(JSON.stringify(queue))
         if (queue.length != 0) {

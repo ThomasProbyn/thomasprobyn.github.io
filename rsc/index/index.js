@@ -19,13 +19,13 @@ indexObject = {
                 {
                     "name" : "Now I'm Here",
                     "url" : "./rsc/audio/day-one/now.mp3"
-                }
+                },
             ],
             "data" : {
-                "Year" : "2023",
-                "Season" : "Spring"
+                "year" : "2023",
+                "season" : "Spring"
             },
             "downloadURL" : "./rsc/audio/day-one/day-one-all-songs.zip"
-        }    
+        },
     ]
 }

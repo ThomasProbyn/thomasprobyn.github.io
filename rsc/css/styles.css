@@ -119,3 +119,27 @@
 .song-list-divider {
     margin-left:-5px;
 }
+.home-page-promotion-section {
+    margin-top: 100px;
+    margin-left: 20px;
+}
+.album-card {
+    height: 400px;
+    width: 300px;
+    background-color: #252525;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom:20px;
+    display: inline-block;
+}
+.album-card-image {
+    margin-left: 7%;
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+}
+.primary-album-card-text-elements {
+    padding-left: 30px;
+}

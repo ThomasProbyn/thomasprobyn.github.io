@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thomas Probyn</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./rsc/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Solway:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body class="site-background-colour">
+        <!-- Navbar -->
+        <div class="site-background-colour element-template-navbar-horizontal">
+            <h1 class="primary-text-colour primary-text-font text-type-title" id="tabTitle">Thomas Probyn</h1>
+            <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal" href="./index.html">Music</a>
+            <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Photography</a> -->
+            <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Web design</a> -->
+            <!-- <a class="secondary-text-colour primary-text-font text-type-primary-nav offset-left-navbar-horizontal">Video</a> -->
+        </div>
+        <!-- Promotional Section -->
+        <div class="primary-promotional-section">
+            <div class="primary-promotional-section-left" id="primary-promotional-section-left">
+                <h1 class="primary-promotional-section-title primary-text-colour primary-text-font" id="album-main-title-text">Album Name</h1>
+                <p class="primary-promotional-section-subtext primary-text-colour primary-text-font" id="album-main-release-date">Release Date</p>
+                <div id="main-album-controls"></div>
+            </div>
+            <div class="primary-promotional-section-right" id="primary-promotional-section-right">
+                <img class="primary-promotional-section-image" id="primary-promotional-section-image">
+                <a class="primary-promotional-section-link primary-text-colour primary-text-font">Listen now for free</a>
+            </div>
+        </div>
+        <!-- Media Player Footer -->
+        <div class="media-player-parent-element">
+            <img src="" id="media-player-image" class="media-player-preview-image">
+            <div class="media-player-text-block">
+                <audio id="audio-player" src="" autoplay></audio>
+                <p class="primary-text-font primary-text-colour media-player-title" id="media-player-title">Nothing Playing</p>
+                <p class="primary-text-font primary-text-colour media-player-subtext" id="media-player-subtext">Select a song or album to start playing</p>
+            </div>
+        </div>
+    </body>
+    <script src="./rsc/scripts/player.js"></script>
+    <script src="./rsc/index/index.js"></script>
+</html>
