@@ -7,18 +7,22 @@ indexObject = {
                 {
                     "name" : "All Falls Away",
                     "url" : "./rsc/audio/day-one/all.mp3",
+                    "daw" : "Ableton Live",
                 },
                 {
                     "name" : "Boys don't cry",
-                    "url" : "./rsc/audio/day-one/boy.mp3"
+                    "url" : "./rsc/audio/day-one/boy.mp3",
+                    "daw" : "Ableton Live",
                 },
                 {
                     "name" : "Put together, Pulled apart",
                     "url" : "./rsc/audio/day-one/put.mp3",
+                    "daw" : "Ableton Live",
                 },
                 {
                     "name" : "Now I'm Here",
-                    "url" : "./rsc/audio/day-one/now.mp3"
+                    "url" : "./rsc/audio/day-one/now.mp3",
+                    "daw" : "Ableton Live",
                 },
             ],
             "data" : {
@@ -34,22 +38,27 @@ indexObject = {
                 {
                     "name" : "By The Light Of The Moon",
                     "url" : "./rsc/audio/the-classics/btlotm.mp3",
+                    "daw" : "FL Studio",
                 },
                 {
                     "name" : "Purple Cloud",
                     "url" : "./rsc/audio/the-classics/purple.mp3",
+                    "daw" : "FL Studio",
                 },
                 {
                     "name" : "Travelling",
                     "url" : "./rsc/audio/the-classics/travelling.mp3",
+                    "daw" : "FL Studio",
                 },
                 {
                     "name" : "Always There",
                     "url" : "./rsc/audio/the-classics/always.mp3",
+                    "daw" : "FL Studio",
                 },
                 {
                     "name" : "Truth is in your eyes",
                     "url" : "./rsc/audio/the-classics/eyes.mp3",
+                    "daw" : "Ableton Live",
                 },
             ],
             "data" : {
