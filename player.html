@@ -1,8 +1,7 @@
-<!-- This will remain as index until such a time as a home page is built -->
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Thomas Probyn - Albums</title>
+        <title>Thomas Probyn</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="./rsc/css/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,17 +20,9 @@
         <!-- Promotional Section -->
         <div class="primary-promotional-section">
             <div class="primary-promotional-section-left" id="primary-promotional-section-left">
-                <h1 class="primary-promotional-section-title primary-text-colour primary-text-font">Day One</h1>
-                <p class="primary-promotional-section-subtext primary-text-colour primary-text-font">New EP ● Out Now</p>
-                <img class="icon-play" src="./rsc/icon/icon-play-rounded-filled.png" onclick="queue.push({'releaseID':0,'trackID':0}, {'releaseID':0,'trackID':1}, {'releaseID':0,'trackID':2}, {'releaseID':0,'trackID':3});startPlayer()">
-                <img class="icon-download" src="./rsc/icon/icon-download-rounded-filled.png" onclick="downloadSongs(0)">
-                <h2 class="primary-text-colour primary-text-font song-list-title" style="margin-top: 70px;" onclick="queue=[];queue.push({'releaseID':0,'trackID':0});startPlayer()">1. All Falls Away</h2>
-                <hr class="song-list-divider">
-                <h2 class="primary-text-colour primary-text-font song-list-title" onclick="queue=[];queue.push({'releaseID':0,'trackID':1});startPlayer()">2. Boys don't cry</h2>
-                <hr class="song-list-divider">
-                <h2 class="primary-text-colour primary-text-font song-list-title" onclick="queue=[];queue.push({'releaseID':0,'trackID':2});startPlayer()">3. Put together, Pulled apart</h2>
-                <hr class="song-list-divider">
-                <h2 class="primary-text-colour primary-text-font song-list-title" style="margin-bottom: 100px;" onclick="queue=[];queue.push({'releaseID':0,'trackID':3});startPlayer()">4. Now I'm Here</h2>
+                <h1 class="primary-promotional-section-title primary-text-colour primary-text-font" id="album-main-title-text">Album Name</h1>
+                <p class="primary-promotional-section-subtext primary-text-colour primary-text-font" id="album-main-release-date">Release Date</p>
+                <div id="main-album-controls"></div>
             </div>
             <div class="primary-promotional-section-right" id="primary-promotional-section-right">
                 <img src="./rsc/img/day-one/Promo.jpeg" class="primary-promotional-section-image">
