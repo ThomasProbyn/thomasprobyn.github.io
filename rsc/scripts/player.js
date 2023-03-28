@@ -4,7 +4,10 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 albumIndex = urlParams.get('album')
 
+
+
 window.addEventListener("load", (event) => {
+    document.title = indexObject.albums[albumIndex].name + " | Thomas Probyn"
     document.getElementById("album-main-title-text").innerHTML = indexObject.albums[albumIndex].name
     document.getElementById("album-main-release-date").innerHTML = indexObject.albums[albumIndex].data.season + " " + indexObject.albums[albumIndex].data.year
     albumQueueObjectArray = []
