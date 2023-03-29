@@ -58,7 +58,7 @@ indexObject = {
                 {
                     "name" : "Always There",
                     "url" : "./rsc/audio/the-classics/always.mp3",
-                    "daw" : "FL Studio",
+                    "daw" : "Studio One",
                 },
             ],
             "data" : {
