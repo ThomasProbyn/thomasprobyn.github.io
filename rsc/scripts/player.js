@@ -46,7 +46,14 @@ function startPlayer() {
         if (queue.length != 0) {
             document.getElementById("audio-player").src = indexObject.albums[queue[0].releaseID].tracks[queue[0].trackID].url
             document.getElementById("audio-player").play()
-            document.getElementById("media-player-title").innerHTML = indexObject.albums[queue[0].releaseID].tracks[queue[0].trackID].name
+            if (document.getElementById("audio-player").paused == false) {
+                document.getElementById("playPauseButton").src = "./rsc/icon/icon-pause-rounded-filled.png"
+            }
+            if (width < 1100) {
+                document.getElementById("media-player-title").innerHTML = autoTruncate(indexObject.albums[queue[0].releaseID].tracks[queue[0].trackID].name, 15)
+            } else {
+                document.getElementById("media-player-title").innerHTML = indexObject.albums[queue[0].releaseID].tracks[queue[0].trackID].name
+            }
             document.getElementById("media-player-subtext").innerHTML = indexObject.albums[queue[0].releaseID].name
             document.getElementById("media-player-image").src = indexObject.albums[queue[0].releaseID].image
             queue.shift()
@@ -79,9 +86,11 @@ width = window.innerWidth
 if (width < 1100) {
     document.getElementById("primary-promotional-section-right").hidden = true
     document.getElementById("primary-promotional-section-left").style.paddingLeft = "10px"
+    document.getElementById("media-player-title").style.fontSize = "20px"
 } else {
     document.getElementById("primary-promotional-section-right").hidden = false
     document.getElementById("primary-promotional-section-left").style.paddingLeft = "80px"
+    document.getElementById("media-player-title").style.fontSize = "33px"
 }
 
 window.onresize = function () {
@@ -99,4 +108,24 @@ window.onresize = function () {
 
 function downloadSongs(albumIndex) {
     window.location.href = indexObject.albums[albumIndex].downloadURL
+}
+
+function autoTruncate(textToTruncate, charsToCutAt) {
+    if (textToTruncate.length >= charsToCutAt) {
+        textToTruncate = textToTruncate.substring(0, charsToCutAt)
+        textToTruncate = textToTruncate + "..."
+    }
+    return(textToTruncate)
+}
+
+function playPause(buttonID) {
+    if (document.getElementById("media-player-title").innerHTML != "Nothing Playing") {
+        if (document.getElementById("audio-player").paused == false) {
+            document.getElementById("audio-player").pause()
+            document.getElementById("playPauseButton").src = "./rsc/icon/icon-play-rounded-filled.png"
+        } else {
+            document.getElementById("audio-player").play()
+            document.getElementById("playPauseButton").src = "./rsc/icon/icon-pause-rounded-filled.png"
+        }
+    }
 }
