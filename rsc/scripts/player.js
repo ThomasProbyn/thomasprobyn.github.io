@@ -4,6 +4,10 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 albumIndex = urlParams.get('album')
 
+if (albumIndex == null) {
+    window.location.href = "./index.html"
+}
+
 
 
 window.addEventListener("load", (event) => {
