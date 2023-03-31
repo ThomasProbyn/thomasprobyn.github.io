@@ -43,7 +43,6 @@ window.addEventListener("load", (event) => {
 
 
 function startPlayer() {
-    console.log(JSON.stringify(queue))
         if (queue.length != 0) {
             document.getElementById("audio-player").src = indexObject.albums[queue[0].releaseID].tracks[queue[0].trackID].url
             document.getElementById("audio-player").play()
@@ -77,7 +76,6 @@ document.body.onkeyup = function(e) {
   }
 
 width = window.innerWidth
-console.log(width)
 if (width < 1100) {
     document.getElementById("primary-promotional-section-right").hidden = true
     document.getElementById("primary-promotional-section-left").style.paddingLeft = "10px"
