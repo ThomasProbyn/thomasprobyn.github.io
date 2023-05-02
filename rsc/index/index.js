@@ -67,5 +67,21 @@ indexObject = {
             },
             "downloadURL" : "./rsc/audio/the-classics/the-classics-all-songs.zip"
         },
+        {
+            "name" : "Colour Dream",
+            "image" : "./rsc/img/colour-dream/Promo.jpg",
+            "tracks" : [
+                {
+                    "name" : "Objectivity",
+                    "url" : "./rsc/audio/colour-dream/objectivity.mp3",
+                    "daw" : "Ableton Live",
+                },
+            ],
+            "data" : {
+                "year" : "2023",
+                "season" : "Summer"
+            },
+            "downloadURL" : "./rsc/audio/colour-dream/colour-dream-all-songs.zip"
+        },
     ]
 }
