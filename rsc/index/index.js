@@ -76,6 +76,11 @@ indexObject = {
                     "url" : "./rsc/audio/colour-dream/objectivity.mp3",
                     "daw" : "Ableton Live",
                 },
+                {
+                    "name" : "Fallacy",
+                    "url" : "./rsc/audio/colour-dream/fallacy.mp3",
+                    "daw" : "Ableton Live",
+                },
             ],
             "data" : {
                 "year" : "2023",
