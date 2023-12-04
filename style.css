@@ -1,0 +1,53 @@
+/* This CSS was co-developed with ChatGPT 3.5 as a bit of a personal experiment. I'll probably write a blog post about it but in short, I think it's just another tool, and it did this pretty well which is useful. */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+h1, h2, h3 {
+    color: #333;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+p {
+    line-height: 1.6;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #777;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    padding: 10px;
+}
