@@ -1,0 +1,15 @@
+ <?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Tom Probyn's personal website</title>
+  <link>https://thomasprobyn.github.io</link>
+  <description>Tom Probyn's personal website, for anything I find marginally interesting and worth sharing.</description>
+  <item>
+    <title>Blackford Hill sunset</title>
+    <link>https://thomasprobyn.github.io/blogs/blackford_hill_sunset.html</link>
+    <description>A walk at sunset up Edinburgh's Blackford hill</description>
+  </item>
+</channel>
+
+</rss> 
