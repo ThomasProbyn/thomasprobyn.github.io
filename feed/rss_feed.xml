@@ -4,10 +4,17 @@
   <title>Tom Probyn's personal website</title>
   <link>https://thomasprobyn.github.io</link>
   <description>Tom Probyn's personal website, for anything I find marginally interesting and worth sharing.</description>
+
   <item>
     <title>Blackford Hill sunset</title>
     <link>https://thomasprobyn.github.io/blogs/blackford_hill_sunset.html</link>
     <description>A walk at sunset up Edinburgh's Blackford hill</description>
+  </item>
+
+    <item>
+    <title>Sunset on the Union Canal</title>
+    <link>file:///Users/tom/Documents/Code/Personal%20Site/thomasprobyn.github.io/blogs/union_canal_sunset.html</link>
+    <description>A walk along the beautiful Union canal in Edinburgh; a race against the setting sun.</description>
   </item>
 </channel>
 
