@@ -1,7 +1,7 @@
 # Why E-Mail on the internet doesn't really work
 *29th April 2024*
 
-I decided to set up a website E-Mail address today - something I've wanted to do for a while. You can now E-Mail me [here](../email.html). One of the things I had to consider whilst doing so was the ever-present problem of SPAM.
+I decided to set up a website E-Mail address today - something I've wanted to do for a while. You can now E-Mail me [here](../../email.html). One of the things I had to consider whilst doing so was the ever-present problem of SPAM.
 
 SPAM filters are amazing as compared to what they used to be, in fact I quite simply cannot remember the last time I even *saw* a junk E-Mail! Admittedly, I am *incredibly* careful about who gets my address, and how long they may keep it for, even going so far as to set up relay and alias addresses for less reputable institutions. The point stands though: my junk folder still contains the messages, I just never have to look at them. 
 
