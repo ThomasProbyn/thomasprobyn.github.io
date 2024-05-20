@@ -23,7 +23,7 @@ To keep up to date, follow the [RSS Feed](./feed)
 ## Categories
 Select a category to see all the blogs which come under it
 
-- [Walks and the outdoors](./blogs/walks)
-- [Bigger projects](./blogs/projects)
-- [Quick thoughts and ideas](./blogs/ideas)
+- [Walks](./blogs/walks)
+- [Projects](./blogs/projects)
+- [Thoughts and ideas](./blogs/ideas)
 - [Art and music](./blogs/art)
