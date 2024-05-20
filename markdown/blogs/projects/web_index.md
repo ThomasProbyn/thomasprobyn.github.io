@@ -33,3 +33,5 @@ The archive is an ever expanding list of sites, so do keep returning to see what
 **[OpenStreetMap](https://www.openstreetmap.org/)** - If you're looking for a truly free map, and a surprisingly good one at that, look no further than the OpenStreetMap. Fully open source and highly detailed, the data is yours to do what you want with, or you can contribute your own additions.
 
 **[Britain From Above](https://www.britainfromabove.org.uk/en/map?country=global&view=map)** - A surprisingly vast and geotagged collection of photographs of the UK from aerial surveys etc. Many an old building which appears to be lost to time will in fact be documented on this web site.
+
+**[GridReferenceFinder](https://gridreferencefinder.com/)** - An incredibly useful tool for users of OS maps, allowing conversion between multiple co-ordinate systems. The [Batch convertor](https://gridreferencefinder.com/batchConvert/batchConvert.php) has been the tool which has saved many of my slightly wilder geographical projects - it allows uploading an entire document containing lists of grid references, and will export them to different formats, including Google Earth KML.
