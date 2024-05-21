@@ -1,0 +1,9 @@
+# Black Hill (The Pentlands)
+
+*18th April 2024*
+
+It had fully been my intention to walk the Pentland Hill in some capacity, perhaps even since before moving to Edinburgh. Finding the motivation to resolve that intention has, however, been the main object to its becoming resolved. Nonetheless this very Saturday just gone that motivation indeed did manifest itself, and accordingly went I to the Pentland Hills!
+
+Naturally for any expedee (a word I [invented](../projects/lexicon.html)), the packing of provisions is paramount to a successful endeavor. So, indeed, started the day in a rather unglamorous manner: trying to cram in as many biscuits and crisps as my rather full bag could possibly allow, and with only £2 in my pocket. Despite the rather restrictive parameters of such an operation, I was now felicitously enprovisioned (also [invented](../projects/lexicon.html)).
+
+It was then to catch the bus I went: indeed the Pentlands have a bus route connecting them (vaguely) to Central Edinburgh: the number 44 to Balerno takes one to but a mile's amble from the foot of the hills. Edinburgh's veritable density will truly never fail to amaze me: indeed it is possible through less than an hour on a regularly stopping city bus to enter wild countryside, and be back in a capital city again the very same day. Upon my disembarkation, I took a path already exceedingly familiar to me. One of the prides of Balerno is [Malleny Gardens](https://www.nts.org.uk/visit/places/malleny-garden), a place of true repose.
