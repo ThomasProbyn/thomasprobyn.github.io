@@ -14,11 +14,9 @@ Hello, this is sort of a dumping ground for anything I find marginally interesti
 
 To keep up to date, follow the [RSS Feed](./feed)
 
+1. [A new website (with some broken links)](./blogs/ideas/new_site_links.html)
 1. [Problem solving and the transmitter map](./blogs/ideas/data_wrangling_relays.html)
 1. [From Balerno to Edinburgh on the Water of Leith](./blogs/walks/balerno_edinburgh.html)
-<!-- 1. [Another Blog]()
-1. [Another Blog]()
-1. [Another Blog]() -->
 
 ***
 
