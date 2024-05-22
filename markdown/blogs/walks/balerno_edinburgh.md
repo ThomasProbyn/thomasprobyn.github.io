@@ -1,6 +1,6 @@
 Title: Balerno to Edinburgh walk | Tom Probyn
 
-[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Walks](https://tomprobyn.uk/walks)
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Walks](https://tomprobyn.uk/blogs/walks)
 
 # From Balerno to Edinburgh along the Water of Leith
 *28th April 2024*

@@ -1,6 +1,6 @@
 Title: Tom's Web Index | Tom Probyn
 
-[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Projects](https://tomprobyn.uk/projects)
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Projects](https://tomprobyn.uk/blogs/projects)
 
 # Tom's Web Index
 

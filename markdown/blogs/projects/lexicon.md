@@ -1,6 +1,6 @@
 Title: The Lexicon | Tom Probyn
 
-[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Projects](https://tomprobyn.uk/projects)
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Projects](https://tomprobyn.uk/blogs/projects)
 
 # The Lexicon: Words I (claim to) have invented
 
