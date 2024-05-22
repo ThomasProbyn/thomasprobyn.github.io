@@ -1,6 +1,6 @@
 Title: Broken Links | Tom Probyn
 
-[Home Page](https://tomprobyn.uk) > [Blog](https://tomprobyn.uk/blog) > [Ideas](https://tomprobyn.uk/blog/ideas)
+[Home Page](https://tomprobyn.uk) > [Blog](https://tomprobyn.uk/blogs) > [Ideas](https://tomprobyn.uk/blogs/ideas)
 
 # A new website (with some broken links)
 *22 May 2024*
