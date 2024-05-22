@@ -4,6 +4,8 @@ Title: Tom's Web Index | Tom Probyn
 
 # Tom's Web Index
 
+*Last updated: 22 May 2024*
+
 The Web Index is a personal collection of web sites which I have found, from time to time, to be useful. Please note - the contents of external sites may change and I am therefore not responsible for them. Similarly, I am not personally affiliated with any of these web sites or the people who maintain them.
 
 The index is split into different categories of site, each under a specific heading. You may click the blue [link]() text to be transported to the web site. If you do, this web site will stay open in the background for your convenience.
