@@ -1,6 +1,6 @@
 Title: Walks | Tom Probyn
 
-[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Walks](https://tomprobyn.uk/walks)
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs)
 
 # Walks
 
