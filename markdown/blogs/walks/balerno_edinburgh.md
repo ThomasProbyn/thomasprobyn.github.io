@@ -17,19 +17,19 @@ I bid adieu to the bus on a bridge in Balerno, which forms the official start of
 
 It, indeed, was quite as fantastic as expected. I ambled slowly past beds of shrubs and flora of sundry variety, some of which was in bloom, the rest evidently about to go. I took to a small bench which sat in the very North-East corner of the garden, against the wall. The view extended behind the beds up to the very end wall - the point at which I had first entered the garden, and through hundreds of fetching plants towards the Western boundary of the land. 
 
-![Pink speckled flower; closeup macro composition](../photos/malleny_garden_pink_speckled_flower.jpeg)
+![Pink speckled flower; closeup macro composition](https://tomprobyn.uk/photos/malleny_garden_pink_speckled_flower.jpeg)
 
 A few moments passed in silence, before I decided to take up my wandering again. I had a good poke around the rest of the garden, before deciding I could perhaps allow myself lunch, even at a quarter past eleven. The advantage of eating this early was that I would feel obliged to stop for a strategic ice-cream halfway round the walk, a prospect I felt admittedly more excited than perhaps was justified.
 
 As I sat and ate my lunch I looked out across the Water of Leith, I looked forward to the journey I had back to Edinburgh. Admittedly, I was a little hazy on the details, having not yet looked at a map, though I did know there was a good path to follow. The route starts just off the bridge upon which the number 44 stops, the path I had seen already on my way in. That the number 44 ran virtually the course of the Water of Leith was not a coincidence - for this was to be my escape route in case of emergency - or indeed in case of lack of a decent ice cream!
 
-![Water of Leith from Malleny Garden](../photos/malleny_garden_water_of_leith.jpeg)
+![Water of Leith from Malleny Garden](https://tomprobyn.uk/photos/malleny_garden_water_of_leith.jpeg)
 
 Having packed away, and feeling distinctly peckish still after eating salad pita breads (which was about the best I could do with the single lettuce and handful of tomatoes I had been greeted with upon opening the fridge) I tootled over to the gate and bid farewell to Malleny. It would not be long before I would once again return, but leaving always felt rather a reluctant activity, as the yearning for the peacefulness within restarted promptly after hearing the click of the gate behind me.
 
 I made for the path aforementioned - which appeared to be fortuitously decently signposted: 8 Miles to Edinburgh proclaimed the brown sign above me - a figure who's veracity I would come to doubt in the near future given the slightly fluctuant nature of the next signs in the series. I do like to read up on the places I go *before* I visit, even if just for some semblance of knowing where it is I am going. Between the impetuosity of this trip, and my rather lacking background research of the areas West of Edinburgh, I was rather unsure on the origins of the path and did hope for some decent signboards along the way. I do rather enjoy a decent signboard, and I see their decline and demise as a point of great sadness. I do feel that in part the Internet is to blame for this: information is significantly cheaper to publish digitally and has far more of a chance of reaching an audience. But, I also feel the information is significantly *cheapened* by this means of publication, and the authority with which it is presented often diminished. I see this decline in many forms: museums, etc, and I do feel it is an awfully glum state of affairs.
 
-![The mile sign at the very start of the Water of Leith, giving distances to various places](../photos/mile_sign_water_of_leith_start.jpeg)
+![The mile sign at the very start of the Water of Leith, giving distances to various places](https://tomprobyn.uk/photos/mile_sign_water_of_leith_start.jpeg)
 
 The path reminded me a lot of one with which I was already familiar: the [Wylam Wagonway](https://twsitelines.info/SMR/1032) in Newcastle, extending into Northumberland. Once the testing ground for [Stephenson's Rocket](https://www.britannica.com/topic/Rocket-locomotive), the path now forms a natural corridor between Newburn and the Northumbrian village of Wylam. As such, it retains many of its locomotive features, and is still distinctively a former railway. I could see this in the Water of Leith walkway - the way in which the retaining walls curved alongside the path, the way in which the path remained incredibly straight and had no tight curves even at bridges all screamed old railway. And as I looked into the woods to the side of the path I saw an old signaling wire pole, and veritably grinned at my assumption being correct.
 
@@ -41,13 +41,13 @@ Skipping forward through what was through pretty un-notable countryside (althoug
 
 The next stop was to be Colinton, an absolutely fantastic little village which is now well absorbed into Edinburgh. Unlike many of Edinburgh's other acquisitions, though, it has not failed to keep its identity in almost every way; it is almost indistinguishable from many of the country villages in which I spent a great proportion of my childhood. Perhaps the only indication one was in fact in Edinburgh was the frequency of the buses, and that they were red, not green. 
 
-![The bridge in Colinton over the Water of Leith](../photos/colinton_village_bridge.jpeg)
-![Houses near the bridge in Colinton](../photos/colinton_village_near_bridge.jpeg)
-![Near the Colinton village bridge](../photos/colinton_village_houses.jpeg)
+![The bridge in Colinton over the Water of Leith](https://tomprobyn.uk/photos/colinton_village_bridge.jpeg)
+![Houses near the bridge in Colinton](https://tomprobyn.uk/photos/colinton_village_near_bridge.jpeg)
+![Near the Colinton village bridge](https://tomprobyn.uk/photos/colinton_village_houses.jpeg)
 
 Colinton provided an incredibly necessary service to me: ice cream! For being the first of the year too, it was not a bad choice - a strawberry cornetto. I wandered back through [Spylaw park](https://www.woodlandtrust.org.uk/visiting-woods/woods/spylaw-park/), from where departs a number of walks which I have added to my list, and past [Spylaw Bank House](https://www.spylawbankhouse.com/).
 
-![Spylaw Bank House](../photos/spylaw_house.jpeg)
+![Spylaw Bank House](https://tomprobyn.uk/photos/spylaw_house.jpeg)
 
 Leaving the park, the old railway goes through perhaps the third most famous landmark on the Water of Leith walk (behind Leith itself and the Dean Village), that being the [Colinton Railway Tunnel](https://www.colintontunnel.org.uk/). It tells, through graffiti the story of a Robert Louis Stevenson poem, given that he grew up in Colinton.
 

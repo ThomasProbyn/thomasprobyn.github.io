@@ -9,6 +9,6 @@ Admittedly, the intention of this site was never to become a time-consuming obse
 
 Thus, I have elected to attempt to write a new blog every Saturday evening, to be published on Sunday mornings. Perhaps they will not be quite as long as one may expect, though I do feel the regularity of the entries perhaps trumps their quantity.
 
-The very first of these blogs is now on-line: [From Balerno to Edinburgh along the Water of Leith](./balerno_edinburgh.html) (in which I immediately break the rule of not writing too much!).
+The very first of these blogs is now on-line: [From Balerno to Edinburgh along the Water of Leith](../walks.balerno_edinburgh.html) (in which I immediately break the rule of not writing too much!).
 
-If you wish to know when new blogs are available (or simply be the first to know how many Sundays it takes for me to fail entirely on this promise!) the [RSS Feed](../feed/index.html) is online and available.
+If you wish to know when new blogs are available (or simply be the first to know how many Sundays it takes for me to fail entirely on this promise!) the [RSS Feed](https://tomprobyn.uk/feed/) is online and available.
