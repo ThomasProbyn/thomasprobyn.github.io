@@ -1,3 +1,7 @@
+Title: E-Mail on the internet | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Ideas](https://tomprobyn.uk/ideas)
+
 # Why E-Mail on the internet doesn't really work
 *29th April 2024*
 

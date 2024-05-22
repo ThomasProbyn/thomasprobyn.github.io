@@ -1,3 +1,7 @@
+Title: Nostalgia | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Ideas](https://tomprobyn.uk/ideas)
+
 # Nostalgia, web design and passion
 *13th Jan 2024*
 

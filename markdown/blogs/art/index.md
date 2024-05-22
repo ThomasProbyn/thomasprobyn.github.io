@@ -1,3 +1,7 @@
+Title: Art | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs)
+
 # Art
 
 ## Music

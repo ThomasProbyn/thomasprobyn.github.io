@@ -1,3 +1,7 @@
+Title: All Blogs | Tom Probyn
+
+[Home Page](https://tomprobyn.uk)
+
 # Blogs
 
 ## Categories

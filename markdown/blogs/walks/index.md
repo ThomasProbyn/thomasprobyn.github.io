@@ -1,3 +1,7 @@
+Title: Walks | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Walks](https://tomprobyn.uk/walks)
+
 # Walks
 
 I try to write about the different walks I go on, mainly as a way of remembering them for my own pleasure. Listed below are a number of blogs as such:

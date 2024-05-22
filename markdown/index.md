@@ -1,3 +1,5 @@
+Title: Tom Probyn's Home Page
+
 # Tom Probyn's Personal Site
 
 Hello, this is sort of a dumping ground for anything I find marginally interesting really. It's not much to behold design-wise but it seems the precedent these days is a page with more adverts than actual copy so there is that I suppose. I don't even need a cookie warning! Anyway, here's some of the things I do.

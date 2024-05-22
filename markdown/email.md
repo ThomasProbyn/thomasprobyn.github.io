@@ -1,3 +1,7 @@
+Title: Contact me | Tom Probyn
+
+[Home Page](https://tomprobyn.uk)
+
 # Contact me
 
 If you wish to contact me, there is a specific E-Mail address available relating to this website. Please E-Mail corrections, thoughts, or indeed any correspondences related to this website in some way to:

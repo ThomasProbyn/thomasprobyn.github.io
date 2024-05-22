@@ -1,3 +1,7 @@
+Title: Frequency of blogs | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Ideas](https://tomprobyn.uk/ideas)
+
 # Frequency of blogs
 *27th April 2024*
 

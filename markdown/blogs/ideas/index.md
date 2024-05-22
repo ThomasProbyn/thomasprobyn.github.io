@@ -1,3 +1,7 @@
+Title: Thoughts and Ideas | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs)
+
 # Thoughts and ideas
 
 This is a space for quick and dirty posts - expect nothing short of microblogging really. I suppose this is a less restricted form of what I would have used Twitter for, when Twitter still existed.

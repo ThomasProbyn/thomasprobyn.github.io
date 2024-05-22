@@ -1,3 +1,7 @@
+Title: About Me | Tom Probyn
+
+[Home Page](https://tomprobyn.uk)
+
 # About Me
 
 I am Tom, a 20-year-old university student based in Edinburgh. I try to find the greatest joy I possibly can in things which don't cost myself, other people, or the planet, and this site acts as a bit of a shrine to that.

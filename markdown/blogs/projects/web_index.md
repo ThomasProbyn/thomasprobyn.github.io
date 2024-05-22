@@ -1,3 +1,7 @@
+Title: Tom's Web Index | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Projects](https://tomprobyn.uk/projects)
+
 # Tom's Web Index
 
 The Web Index is a personal collection of web sites which I have found, from time to time, to be useful. Please note - the contents of external sites may change and I am therefore not responsible for them. Similarly, I am not personally affiliated with any of these web sites or the people who maintain them.

@@ -1,3 +1,7 @@
+Title: Problem solving and the Transmitter Map | Tom Probyn
+
+[Home Page](https://tomprobyn.uk) > [Blogs](https://tomprobyn.uk/blogs) > [Ideas](https://tomprobyn.uk/ideas)
+
 # Problem solving and the transmitter map
 *20 May 2024*
 
