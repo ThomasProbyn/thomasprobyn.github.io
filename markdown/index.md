@@ -24,8 +24,8 @@ To keep up to date, follow the [RSS Feed](./feed)
 ## Categories
 Select a category to see all the blogs which come under it
 
-- 📁 [All Blogs](./blogs/)
-    - 📁 [Walks](./blogs/walks)
-    - 📁 [Projects](./blogs/projects)
-    - 📁 [Thoughts and ideas](./blogs/ideas)
-    - 📁 [Art and music](./blogs/art)
+- 📁 [**All Blogs**](./blogs)
+- 📁 [Walks](./blogs/walks)
+- 📁 [Projects](./blogs/projects)
+- 📁 [Thoughts and ideas](./blogs/ideas)
+- 📁 [Art and music](./blogs/art)
