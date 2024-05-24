@@ -12,7 +12,7 @@ Hello, this is sort of a dumping ground for anything I find marginally interesti
 
 ## New Blogs
 
-To keep up to date, follow the [RSS Feed](./feed)
+To keep up to date, follow the 🛜[RSS Feed](./feed)
 
 1. 📄 [Great floods in the Water of Leith](./blogs/walks/floods_water_leith.html)
 1. 📄 [A new website (with some broken links)](./blogs/ideas/new_site_links.html)
