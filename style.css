@@ -8,7 +8,6 @@
     --link-color: #3498db;
     --link-hover-color: #e74c3c;
     --hr-color: #ddd;
-    --footer-color: #888;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,7 +33,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 h1 {
@@ -48,6 +46,7 @@ h1, h2, h3 {
 a {
     color: var(--link-color);
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 a:hover {
