@@ -7,6 +7,7 @@ Title: Thoughts and Ideas | Tom Probyn
 This is a space for quick and dirty posts - expect nothing short of microblogging really. I suppose this is a less restricted form of what I would have used Twitter for, when Twitter still existed.
 
 ## Posts
+ - 📄 [Life in the slow line: Deliberately slowing down the internet to end our reliance on it](./the_slow_line.html)
  - 📄 [A new website (with some broken links)](./new_site_links.html)
  - 📄 [Why E-Mail on the internet doesn't really work](./nospam.html)
  - 📄 [Frequency of blogs](./sunday_post.html)
