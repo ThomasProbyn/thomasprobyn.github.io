@@ -29,6 +29,11 @@
     <link>https://tomprobyn.uk/blogs/ideas/the_slow_line.html</link>
     <description>Deliberately slowing down the internet to end our reliance on it</description>
   </item>
+    <item>
+    <title>Web index updates</title>
+    <link>https://tomprobyn.uk/blogs/projects/web_index.html</link>
+    <description>I should probably create a project-specific RSS feed for the web index, but I have changed some things there and added links.</description>
+  </item>
 </channel>
 
 </rss> 
