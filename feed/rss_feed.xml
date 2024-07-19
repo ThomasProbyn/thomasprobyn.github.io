@@ -34,6 +34,11 @@
     <link>https://tomprobyn.uk/blogs/projects/web_index.html</link>
     <description>I should probably create a project-specific RSS feed for the web index, but I have changed some things there and added links.</description>
   </item>
+    <item>
+    <title>Magnificent birds in Northern Scotland</title>
+    <link>https://tomprobyn.uk/blogs/walks/northern_scotland_birds.html</link>
+    <description>A short entry on some interesting bird sightings on a recent trip to Northern Scotland</description>
+  </item>
 </channel>
 
 </rss> 
