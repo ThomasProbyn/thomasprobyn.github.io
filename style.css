@@ -8,6 +8,7 @@
     --link-color: rgb(0, 76, 168);
     --hr-color: #ddd;
     --highlight-color: rgb(255, 227, 65);
+    --highlight-text-color: white;
 }
 
 /* DARK THEME */
@@ -20,7 +21,8 @@
         --link-color: #e5ff00;
         --hr-color: #444;
         --footer-color: #ccc;
-        --highlight-color: rgb(255, 217, 0);
+        --highlight-color: #e5ff00;
+        --highlight-text-color: black;
     }
 }
 
@@ -54,7 +56,7 @@ a {
 *:focus {
     border-bottom: 2px solid var(--text-color);
     background-color: var(--highlight-color);
-    color: var(--text-color);
+    color: var(--highlight-text-color);
     outline: none;
     text-decoration: none;
 }
