@@ -57,7 +57,7 @@ This guide outlined that:
 
  - Good pitch *memory* is the ability to remember specific frequencies in-tune for long or infinite periods of time and it something you are probably born with.
  - If you use your pitch memory to remember the names and sounds of the 12 notes of the octave, you have *perfect pitch*.
- - It is possible to have good pitch memory without having perfect pitch - and if you have good pitch memory, perfect pitch can be learned.
+ - It is possible to have good pitch memory without having perfect pitch - but if you have good pitch memory, perfect pitch can be learned by remembering the 12 notes of the octave.
  - If you don't have good pitch memory, you probably can't learn perfect pitch.
  - Online perfect pitch tests don't test for pitch memory, and can lead you to believe that you don't have perfect pitch when indeed you might.
 
