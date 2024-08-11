@@ -21,7 +21,7 @@ The innate ability to hear a frequency and correctly remember it over a period o
 This is the ability trained musicians have to understand how two different notes relate to each other. In it's simplest form, this is how anybody sings along to songs they like. It is how you can listen to a song you have heard before, then pause it and keep singing along - because you understand that the next note relative to the one you last heard should be higher or lower. A trained musician can use this ability to play a C on a piano, then be able to sing a G. As far as we know, genetics have little baring on your relative pitch abilities and almost everyone can learn it with a bit of practice. It is something most people pick up when studying music at school or learning how to play an instrument.
 
 ### Note/pitch dictionary
-This is a term which I came up with for the purposes of this article - you won't find it used elsewhere. This is the best way I can explain how people with perfect pitch can take a sound any map it's frequency to a note name. For most people with perfect pitch this becomes instant and effortless, just like how you start by learning a new language from a dictionary but it soon just becomes second nature.
+This is a term which I came up with for the purposes of this article - you won't find it used elsewhere. This is the best way I can explain how people with perfect pitch can take a sound and map its frequency to a note name. For most people with perfect pitch this becomes instant and effortless, just like how you start by learning a new language from a dictionary but it soon just becomes second nature.
 
 ## The two ingredients to perfect pitch
 
