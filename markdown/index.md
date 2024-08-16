@@ -6,7 +6,7 @@ Hello, this is sort of a dumping ground for anything I find marginally interesti
 
 [About Me](./me.html)
 
-[E-Mail Me](./email.html)
+[Contact Me](./contact.html)
 
 ***
 
