@@ -14,11 +14,11 @@ Hello, this is sort of a dumping ground for anything I find marginally interesti
 
 To keep up to date, follow the [RSS Feed](./feed)
 
+1. 📄 [The (ridiculous) Simplified Ratio Clock](./blogs/projects/ratio_clock/ratio_clock.html)
 1. 📄 [The ambiguous world of perfect pitch](./blogs/ideas/perfect_pitch.html)
 1. 📄 [Magnificent birds in Northern Scotland](./blogs/walks/northern_scotland_birds.html)
 1. 📄 [Life in the slow line: Deliberately slowing down the internet to end our reliance on it](./blogs/ideas/the_slow_line.html)
 1. 📄 [Great floods in the Water of Leith](./blogs/walks/floods_water_leith.html)
-1. 📄 [A new website (with some broken links)](./blogs/ideas/new_site_links.html)
 
 ***
 
