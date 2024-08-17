@@ -7,7 +7,7 @@ Title: The simplified ratio clock: A ridiculous mathematical timepiece | Tom Pro
 
 [See the clock](./app.html)
 
-Between this and [the pips](https://www.tomprobyn.uk/blogs/projects/time_signal.html) I seem to have developed a bit of a penchant for the unusual timepiece. I had a very weird idea on a car journey recently, staring absent-mindedly at the digital clock on the dashboard. We represent digital time in a similar way to how we represent ratios (in the format a:b), so what would happen if we treated it the same, and simplified those ratios? That lead me to develop the most ridiculous (and patently useless) timepiece yet.
+Between this and [the pips](https://www.tomprobyn.uk/blogs/projects/time_signal.html) I seem to have developed a bit of a penchant for the unusual timepiece. I had a very weird idea on a car journey recently, staring absent-mindedly at the digital clock on the dashboard (I should clarify - I wasn't driving!). We represent digital time in a similar way to how we represent ratios (in the format a:b), so what would happen if we treated it the same, and simplified those ratios? That lead me to develop the most ridiculous (and patently useless) timepiece yet.
 
 The ratio clock does just that. It takes the time, sees if it can be simplified as a ratio, and if it can be, presents it that way! It's useless, of course, because multiple different times will all show as the same thing (1:01, 2:02, 3:03 etc will all show as 1:1), but that doesn't stop it being fun. 
 
