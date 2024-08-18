@@ -17,7 +17,7 @@ The ratio clock does just that. It takes the time, sees if it can be simplified 
 
 ## Maths
 
-The maths here is very simple: take the minute and the hour, and check what the largest number they both divide by is. Then divide them both by that. I'm no good at maths, so I let Euclid take the driving seat for this part and used one of the best known algorithms for this purpose. It is extremely simple, efficient enough for my purposes, and best of all [available on Wikipedia!](https://en.wikipedia.org/wiki/Euclidean_algorithm). It uses recursion and modulo to repeatedly test divisions - any more detail on it and my head will explode... 
+The maths here is very simple: take the minute and the hour, and check what the largest number they both divide by is. Then divide them both by that. I'm no good at maths, so I let Euclid take the driving seat for this part and used one of the best known algorithms for this purpose. It is extremely simple, efficient enough for my purposes, and best of all it is license-free and [available on Wikipedia!](https://en.wikipedia.org/wiki/Euclidean_algorithm). It uses recursion and modulo to repeatedly test divisions - any more detail on it and my head will explode... 
 
 ## Accessibility
 
