@@ -11,6 +11,8 @@ Between this and [the pips](https://www.tomprobyn.uk/blogs/projects/time_signal.
 
 The ratio clock does just that. It takes the time, sees if it can be simplified as a ratio, and if it can be, presents it that way! It's useless, of course, because multiple different times will all show as the same thing (1:01, 2:02, 3:03 etc will all show as 1:1), but that doesn't stop it being fun. 
 
+*NB:* If the clock just appears to show the normal time, then it isn't broken, it's just that the ratio is already as simple as it can be (19:07 for instance would just show as 19:07 as both of the numbers are prime).
+
 [See the clock](./app.html)
 
 ## Maths
@@ -19,8 +21,8 @@ The maths here is very simple: take the minute and the hour, and check what the 
 
 ## Accessibility
 
-This one is a little more in my ballpark - and indeed it was my first thought when making this project. Firstly, it uses JavaScript (which I generally try to avoid where I can), but given its widespread adoption, what technologies can I use to supplement the live document-object model updating required to make this project? In other words: screen readers (which read the text of web pages aloud to users who can't use their eyes to read them for any reason) generally work by starting at the top and reading the document downwards. Then they stop. If part of the document updates *after* the reader has reached the end, the user doesn't hear it get read out. This would spoil the joys of such a ridiculous project for users who couldn't see it, because they would only hear the current time get read out, not every subsequent minute.
+This one is a little more in my ballpark - and indeed it was my first thought when making this project. Firstly, it uses JavaScript. I try to avoid Javascript - mainly because I use [Lynx](https://lynx.invisible-island.net/) a lot which outright doesn't support it, but also because for folks using screen readers, it can cause a bit of a problem, or so I thought. Screen readers, which are assistive technologies that read the text of web pages aloud to users who can't use their eyes to read them for any reason, generally work by starting at the top and reading the web site downwards - then they stop. If part of the document updates *after* the reader has reached the end, the user doesn't hear it get read out. This would spoil the joys of such a ridiculous project for users who couldn't see it, because they would only hear the current time get read out once, not every subsequent minute.
 
-It turns out that there is a solution to this problem: the [ARIA-Live](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) attribute allows developers, using JavaScript to dynamically update a page, to announce to the screen reader whenever an update occurs. In theory, this solves the problem, and allows users of screen readers to experience the page like virtually anyone else. Given how strong my views on digital accessibility are, this pleases me immensely.
+It turns out, though, that there is a solution to this problem: the [ARIA-Live](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) attribute allows developers using JavaScript to dynamically update a page to inform the screen reader whenever an update occurs. The screen reader then announces the new text to the user. In theory, this solves the problem, and allows users of screen readers to experience the page like virtually anyone else. Given how strong my views on digital accessibility are, this pleases me immensely.
 
 [See the clock](./app.html)
