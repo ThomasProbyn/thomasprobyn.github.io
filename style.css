@@ -1,14 +1,14 @@
 /* LIGHT THEME */
 
 :root {
-    --background-color: #ffffff;
+    --background-color: #f9faff;
     --text-color: #000000;
     --text-dark: #eee;
     --heading-color: #000000;
     --link-color: rgb(0, 76, 168);
     --hr-color: #ddd;
     --highlight-color: rgb(0, 76, 168);
-    --highlight-text-color: rgb(0, 0, 0);
+    --highlight-text-color: rgb(255, 255, 255);
 }
 
 /* DARK THEME */
