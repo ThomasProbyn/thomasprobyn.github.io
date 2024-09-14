@@ -54,6 +54,11 @@
     <link>https://tomprobyn.uk/blogs/projects/ratio_clock/ratio_clock.html</link>
     <description>A very stupid and utterly useless idea I had and made because the alternative was not making it. WARNING: Contains maths!</description>
   </item>
+   <item>
+    <title>Notes</title>
+    <link>https://tomprobyn.uk/notes</link>
+    <description>I've started a new section of the website containing notes, which are less organised than blogs. Notes has its own RSS feed, which you can find on the Feed page</description>
+  </item>
 </channel>
 
 </rss> 

@@ -1,0 +1,14 @@
+<rss version="2.0">
+
+<channel>
+  <title>Tom Probyn's notes</title>
+  <link>https://tomprobyn.uk/notes</link>
+  <description>Notes: for thoughts that are too long for mastodon and too short for a blog.</description>
+  <item>
+    <title>Notes?</title>
+    <link>https://tomprobyn.uk/notes/what_notes.html</link>
+    <description>What are notes?</description>
+  </item>
+</channel>
+
+</rss> 

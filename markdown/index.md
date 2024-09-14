@@ -25,8 +25,16 @@ To keep up to date, follow the [RSS Feed](./feed)
 ## Categories
 Select a category to see all the blogs which come under it
 
-- 📁 [**All Blogs**](./blogs)
+### [📁 All Blogs](./blogs)
 - 📁 [Walks](./blogs/walks)
 - 📁 [Projects](./blogs/projects)
 - 📁 [Thoughts and ideas](./blogs/ideas)
 - 📁 [Art and music](./blogs/art)
+
+***
+
+## Notes
+Notes are short (500-1000 word) thoughts which are too long for Mastodon and too short for a proper blog. They have their own [RSS Feed](./feed/notes.html).
+
+### [🗒️ All Notes](./notes/)
+ - 📄 [Notes?](./notes/what_notes.html)
