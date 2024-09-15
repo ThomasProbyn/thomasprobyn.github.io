@@ -2,7 +2,7 @@ Title: Tom Probyn's Home Page
 
 # Tom Probyn's Personal Site
 
-Hello, this is sort of a dumping ground for anything I find marginally interesting really. It's not much to behold design-wise but it seems the precedent these days is a page with more adverts than actual copy so there is that I suppose. I don't even need a cookie warning! Anyway, here's some of the things I do.
+Hello, this is sort of a dumping ground for anything I find marginally interesting really. It's not much to behold design-wise but it seems the precedent these days is a page with more adverts than actual copy so there is that I suppose. I don't even need a cookie warning! (Although you may wish to read [GitHub's](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement) as this site is hosted with them). Anyway, here's some of the things I do.
 
 [Now Page](./now)
 

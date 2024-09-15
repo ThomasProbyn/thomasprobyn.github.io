@@ -1,15 +1,15 @@
 /* LIGHT THEME */
 
 :root {
-    --background-color: #f9faff;
+    --background-color: #fef9ff;
     --text-color: #000000;
     --text-dark: #eee;
     --heading-color: #000000;
-    --link-color: rgb(0, 76, 168);
+    --link-color: rgb(142, 28, 160);
     --hr-color: #ddd;
     --highlight-color: rgb(0, 76, 168);
     --highlight-text-color: rgb(255, 255, 255);
-    --shadow-color: #70a7ea;
+    --shadow-color: #ffffff;
 }
 
 /* DARK THEME */
@@ -24,7 +24,7 @@
         --footer-color: #ccc;
         --highlight-color: rgb(220, 150, 256);
         --highlight-text-color: black;
-        --shadow-color: rgb(81, 55, 94);
+        --shadow-color: rgb(101, 57, 123);
     }
 }
 
@@ -38,7 +38,7 @@ body {
     padding: 20px;
     font-family: georgia;
     font-size: 17px;
-/*     filter: drop-shadow(0px 0px 300px var(--shadow-color)); */
+    /* filter: drop-shadow(0px 0px 300px var(--shadow-color)); */
 }
 
 h1 {
