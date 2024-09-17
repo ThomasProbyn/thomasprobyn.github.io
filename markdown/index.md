@@ -39,4 +39,5 @@ Select a category to see all the blogs which come under it
 Notes are short (500-1000 word) thoughts which are too long for Mastodon and too short for a proper blog. They have their own [RSS Feed](./feed/).
 
 ### [🗒️ All Notes](./notes/)
+ - 📄 [SMS](./notes/sms.html)
  - 📄 [Notes?](./notes/what_notes.html)
