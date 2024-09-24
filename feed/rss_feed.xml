@@ -59,6 +59,11 @@
     <link>https://tomprobyn.uk/notes</link>
     <description>I've started a new section of the website containing notes, which are less organised than blogs. Notes has its own RSS feed, which you can find on the Feed page</description>
   </item>
+     <item>
+    <title>Justifying JavaScript: Politeness on the Web</title>
+    <link>https://tomprobyn.uk/blogs/ideas/justifying_javascript.html</link>
+    <description>The web sometimes feels a bit rude as a NoScript user, which is a bit of a shame, especially as it's so easy to sort it out.</description>
+  </item>
 </channel>
 
 </rss> 
