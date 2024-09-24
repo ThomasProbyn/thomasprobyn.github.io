@@ -24,9 +24,9 @@ Of course, there are the obvious tracking issues too: combined with cookies, Jav
 
 My reasons for not using JavaScript are not the main focus of this article - the reactions of those who disagree with me are. By "those", I am in fact not referring to humans, but websites, and the humans who designed those websites. On the majority of web apps, NoScript users are often treated with (if they're lucky) an infinite spinning circle which will never disappear. It has no way of disappearing! I'd in fact be willing to bet that the developers of most of these sites never even bothered to check what happened when you tried to load them with no script, as there seems to be a conception that users with NoScript enabled don't want to view the app anyway.
 
-If web apps are inevitable (as they so would seem) and people aren't going to write a desktop app even when they really should, then can't we at least have some sort of a standard for addressing noscript users, instead of the poor loading experience or blank white pages we are treated to now?
+If web apps are inevitable (as so they would seem) and people aren't going to write a desktop app even when they really should, then can't we at least have some sort of a standard for addressing noscript users, instead of the poor loading experience or blank white pages we are treated to now?
 
-Given that one of the most brilliant things about JavaScript is its complete control over the DOM (the programmatic representation of all the things you see on the screen), why are sites not more noscript friendly. The solution is pretty simple to me. Many websites load a blank HTML file, then use DOM construction methods to build the page using your device (rather than sending a pre-built HTML page). Why a blank page? If your plan is to use DOM construction methods once JavaScript is available, then why not write a few more lines to deconstruct an existing DOM? 
+Given that one of the most brilliant things about JavaScript is its complete control over the DOM (the programmatic representation of all the things you see on the screen), why are sites not more noscript friendly? The solution is pretty simple to me. Many websites load a blank HTML file, then use DOM construction methods to build the page using your device (rather than sending a pre-built HTML page). Why a blank page? If your plan is to use DOM construction methods once JavaScript is available, then why not write a few more lines to deconstruct an existing DOM? 
 
 If, instead of a blank page, users were served something more along the lines of:
 
@@ -39,6 +39,8 @@ then the first line of the JavaScript for the app could remove that, as those us
 `If you cannot see the clock here, enable JavaScript and try again.`
 
 I didn't feel it necessary to give the users detailed instructions as the sort of people using this site generally don't need them. They're the sort of people who are already all-to-used to seeing infinitely spinning wheels, and questioning whatever ungodly force it was that ever lead them to disable JavaScript.
+
+This isn't a new idea either - many websites do already do this which is fantastic. Google Maps even had a little easter egg hidden in the NoScript page! What I am slightly annoyed about is the prevalence of websites which *don't* adhere to this sort of thing. It's something you only really notice when you do feel the need to disable JavaScript and have a poke around the web. What I think should happen is more sites should have an obligation to their users to serve them the information they want, regardless of the format they choose to view it on. A standard of sorts could be helpful, and so:
 
 ## The proposal
 
