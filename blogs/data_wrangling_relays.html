@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <meta name="dcterms.date" content="2024-05-20" />
+  <title>Problem solving and the transmitter map | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" />
+</head>
+<body>
+<header id="title-block-header">
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/blogs">/blogs</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title">Problem solving and the transmitter map</h1>
+<p class="date">20 May 2024</p>
+</header>
+<p>I have, for just over a year now, been compiling together various
+data sources in order to build an extensive map of the UK’s transmitter
+network. For the benefit of those unfamiliar with the matter, it is not
+that the data is non-existent, simply that it is fragmented across many
+different sources, with no easily findable central database containing
+every single transmitter, regardless of type or purpose.</p>
+<p>Currently, progress is good. The database contains all TV
+transmitters and associated relays (which can be switched to a legacy
+mode in order to display only ARQ owned or BBC owned transmitters). The
+BT Microwave network is also now entirely on there too. This morning’s
+task was to add on self-help relays - a type of very small transmitter
+site which (generally rural) communities worked together to set up in
+order to benefit their village or town. The sites were often very simple
+in nature, using parts which could be bought cheaply (as the community
+normally had to fund it themselves - only technical expertise was
+provided by the authorities). A good example of a well-preserved S/H
+relay is documented <a
+href="https://tx.mb21.co.uk/gallery/gallerypage.php?txid=1995">here</a>
+- note the rudimentary construction and consumer-grade components.</p>
+<h2 id="part-1-getting-the-data">Part 1: Getting the data</h2>
+<p>I had not seen any particularly accurate location data for self-help
+relays thus far - the closest I had found was a <a
+href="https://www.ofcom.org.uk/__data/assets/pdf_file/0020/38216/selfhelp.pdf">list
+(pp.20-27)</a> of sites with vague descriptions, in the format of “21 km
+W Edinburgh”. This was nowhere near enough information, and given that
+there were over 200 of the sites, searching for them using satellite
+imagery and street-view would be rather out of the question. I kept
+digging, and for about a year forgot this needed doing. It was this
+morning when I stumbled, quite by chance upon a <a
+href="https://tx.mb21.co.uk/gallery/gallerypage.php?txid=1941&amp;showhistoric=1">page</a>
+on mb21. It stated “Ofcom has released lots of data on Self Helps under
+a Freedom of Information request” - well golly! I’d better find it
+then!</p>
+<p>Ofcom’s <a
+href="https://www.ofcom.org.uk/about-ofcom/foi-dp/foi-responses">FOI
+database</a> goes back to 2022 at time of writing, well after the time
+in 2015 in which the MB21 article was published. But through multiple
+nested archive links, I was able to get back to 2016, before the link to
+“older responses” disappeared, leaving me empty handed. Time for a bit
+of precision-googling. I searched for ‘ofcom “self help” FOI’, in order
+to try and get a direct match with all documents relating to “self
+help”, and using ‘ofcom’ to tune out any CBT websites, and ‘FOI’ to try
+and limit the number of general information pages which were returned.
+And indeed, a single document matched all 3 terms!</p>
+<p>The informatively named <a
+href="http://static.ofcom.org.uk/static/foi/FOI%20request%201-248447985.xlsx">Sheet1</a>(Direct
+Download) would indeed hold the answer: a long list of every single
+published response to FOI requests between 2013 and 2004. A quick search
+for “self help” found the relevant option, so I at least had a
+publication date to look for now.</p>
+<p>Going back to the archive site, there was a timeline selector, which
+I used to select the earliest possible date, and saw a link back to an
+even older archive! An archive within an archive within an archive! <a
+href="https://webarchive.nationalarchives.gov.uk/ukgwa/20160703021429/http://stakeholders.ofcom.org.uk/freedom-of-information/foi-responses/">This</a>
+proved fruitful, and went all the way back to 2011, early enough to find
+the 2012 publication of the list of sites I so desperately wanted now.
+Scrolling down, I found it, and downloaded a <a
+href="https://webarchive.nationalarchives.gov.uk/ukgwa/20160706155535/http://stakeholders.ofcom.org.uk/freedom-of-information/foi-responses/2012/june2012/1-212007141/">PDF</a>
+containing national grid references of every single self-help station.
+Bingo!</p>
+<h2 id="part-2-actually-getting-the-data">Part 2: <em>Actually</em>
+getting the data</h2>
+<p>Except, of course that’s not the whole story. Because I have been
+doing this for a while now, I’ve developed something of a sixth sense
+with these things, and it was going off like a rocket telling me that
+any document I had to trace through archived archived archives, using
+link-orphaned index documents, probably wasn’t going to just give me a
+straightforward copy-and-paste job in order to actually use the
+data.</p>
+<p>PDF is not a raw data format - XLSX is (just about), CSV is the
+preferred format for data interchange. What I am trying to say is
+exporting data for use as interchangeable raw data in a PDF would
+generally not be a good idea, as the formattting of the data is not
+preserved. Imagine it as sharing an Excel table by taking a screenshot -
+you can <em>see</em> the data, but it would have to be manually
+transcribed in order to use it for anything.</p>
+<p>There is a common saying amongst programmers - it goes a little like
+this: Why spend 2 hours manually doing a tedious task when you can spend
+2 weeks programming a computer to do it in 0.4 seconds? I quite often
+take the programming route, but this time I saw sense (and PDF libraries
+had really scary looking syntax and data structures which might have
+been more the reason). And to boot, I had uploaded it to a few PDF
+editors by this point, none of which could actually decompose it in a
+reasonable way, meaning that any formatting was likely to be entirely
+aesthetic, and non-<a
+href="https://en.wikipedia.org/wiki/Semantic_technology">semantic</a>
+(hardly surprising for an Excel 2007 document put into a PDF, the
+concept of semanticity would not have been as much of a priority then as
+it is today).</p>
+<p>Indeed, the solution in fact came from a very unlikely source: Apple
+Preview. Preview now has an <a
+href="https://en.wikipedia.org/wiki/Optical_character_recognition">OCR</a>
+function built in which allowed me to screenshot the PDF document, then
+pull the text out of it that way with some degree of accuracy. Of
+course, as the data was serialised, a mistake in one column which
+resulted in a row being added or removed would mean that every record
+thereafter would be off by the number of such errors preceding it. 100%
+accuracy was thus necessary, and at this point, in utter despair, I
+tried Excel. It turns out, they have an extremely accurate OCR algorithm
+which could handle the data almost perfectly! I certainly wasn’t getting
+the errors I was from Preview.</p>
+<p>Though, I say “almost perfectly” as there were still, naturally, some
+problems. Excel didn’t take well to the fact that some of the data was
+spaced strangely (thanks PDF!) and started adding numbers in front of
+grid references etc. I noted that much of the data on the PDF was
+actually rather useless for my purposes, and so I decided upon a
+workflow.</p>
+<p>I started by screenshotting the PDF data in Preview in order to
+quantize it into an image. I would then import it into photoshop, and
+cut out any data which wasn’t necessary, leaving me with only the
+transmitter name and the NGR. I would then upload this to Excel, allow
+it to format it into table data, and check it manually. Repeat this for
+some 5 pages, and I <strong>FINALLY</strong> had the data as I needed
+it.</p>
+<h2 id="part-3-actually-actually-getting-the-data">Part 3:
+<strong>Actually</strong> <em>actually</em> getting the data</h2>
+<p>Now for the fun part. I exported the data as CSV (as ever it should
+have been if I may say so) and used my old friend <a
+href="https://gridreferencefinder.com/">GridReferenceFinder</a>
+(specifically the <a
+href="https://gridreferencefinder.com/batchConvert/batchConvert.php">Batch
+tool</a>) in order to convert the CSV to a Google Earth KML file.
+Finally, the Self-Help sites are sat in their rightful place alongside
+my growing database of sites.</p>
+<h3 id="that-was-a-journey-and-a-half">That was a journey and a
+half</h3>
+<p>Getting the data you want isn’t always easy, even if it is publicly
+available. And sometimes you get so tantalisingly close to it but
+something isn’t quite right, and problems still need solving. I think
+this shows a lot about who we are. Some people would have taken the
+programmer route here - sitting down methodically and working through
+the problem. Other people, like me, prefer to bounce about with problems
+like these, finding lots of different routes and making abstract
+connections between things. Neither solution is in any way superior to
+the other, both would arrive at the same result, but knowing how you
+work - and that doing it your way is okay - is an incredibly powerful
+feeling.</p>
+<h2 id="bibliography">Bibliography</h2>
+<h3 id="official-data-sources">Official Data Sources</h3>
+<ol type="1">
+<li><a
+href="https://www.ofcom.org.uk/tv-radio-and-on-demand/information-for-industry/guidance/tech-guidance/selfhelp">Official
+Ofcom page on S/H Relays</a></li>
+<li><a
+href="https://webarchive.nationalarchives.gov.uk/ukgwa/20160706155535/http://stakeholders.ofcom.org.uk/freedom-of-information/foi-responses/2012/june2012/1-212007141/">FOI
+Request containing all data on S/H Relays</a></li>
+<li><a
+href="https://webarchive.nationalarchives.gov.uk/ukgwa/20160706155535/http://stakeholders.ofcom.org.uk/freedom-of-information/foi-responses/2012/june2012/1-212007141/">All
+TV Self Help Relays (Master PDF document)</a></li>
+</ol>
+<h3 id="background-information-on-relays">Background information on
+relays</h3>
+<ol type="1">
+<li><a href="https://tx.mb21.co.uk/mapsys/google/selfhelp.php">MB21 map
+of all self-help relays pre-DSO</a></li>
+<li><a
+href="https://tx.mb21.co.uk/gallery/gallerypage.php?txid=1941&amp;showhistoric=1">MB21
+Crianlarich (self-help) Relay page, generally useful
+information</a></li>
+<li><a
+href="https://txfeatures.mb21.co.uk/self_help_relays/index.shtml">MB21’s
+guide to finding Self Help relays (with pictures!)</a></li>
+</ol>
+<h3 id="background-information-on-technologies-used">Background
+information on technologies used</h3>
+<ol type="1">
+<li><a
+href="https://en.wikipedia.org/wiki/Semantic_technology">Wikipedia
+article on semantics in data representation</a></li>
+<li><a
+href="https://en.wikipedia.org/wiki/Optical_character_recognition">Wikipedia
+article on Optical Character Recognition (OCR)</a></li>
+</ol>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/transmitters">transmitters</a>
+<a class="tag" href="https://tomprobyn.uk/tags/code">code</a>
+<a class="tag" href="https://tomprobyn.uk/tags/problems">problems</a>
+<a class="tag" href="https://tomprobyn.uk/tags/geography">geography</a>
+<a class="tag" href="https://tomprobyn.uk/tags/data">data</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2024. <a href="./licenses">Licenses</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <title>Simplified Ratio Clock App | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" />
+</head>
+<body>
+<header id="title-block-header">
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/blogs">/blogs</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title">Simplified Ratio Clock App</h1>
+</header>
+<style>
+    #live-clock {
+        font-size: 3em;
+        margin: auto;
+        border: 1px dashed black;
+        text-align: center;
+    }
+</style>
+<p>For an explanation of what it is you are looking at, see <a
+href="https://tomprobyn.uk/ratio_clock">here</a>. This page requires
+JavaScript.</p>
+<p>Current (Simplified) Time:</p>
+<p id="live-clock" aria-live="polite">
+If you cannot see the clock here, enable JavaScript and try again.
+</p>
+<p>A project by <a href="https://tomprobyn.uk/">Tom Probyn</a></p>
+<script>
+    function greatestCommonDenom_Euclid(hour, minute) {
+        if (minute) {
+            return greatestCommonDenom_Euclid(minute, hour % minute);
+        } else {
+            return Math.abs(hour);
+        }
+    }
+    //^ Thank you Euclid and Wikipedia! (& good old recursion)
+
+
+    oldTime = {"hour": 0, "minute": 0}
+
+
+    function tick() {    
+        dateObj = new Date()
+        currentHour = dateObj.getHours()
+        currentMinute = dateObj.getMinutes()
+        if (!(currentHour == oldTime.hour && currentMinute == oldTime.minute)) {
+            oldTime.hour = currentHour
+            oldTime.minute = currentMinute
+            updateTime(currentHour, currentMinute)
+        }
+        setTimeout(tick, 1000)
+    }
+    tick()
+
+    function updateTime(currentHour, currentMinute) {
+        gcd = greatestCommonDenom_Euclid(currentHour, currentMinute)
+        document.getElementById("live-clock").innerHTML = (currentHour/gcd).toString() + ":" + (currentMinute/gcd).toString()
+    }
+</script>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/projects">projects</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2024. <a href="./licenses">Licenses</a></p>
+</footer>
+</body>
+</html>

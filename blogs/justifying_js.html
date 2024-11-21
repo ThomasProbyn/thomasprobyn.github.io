@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <title>Justifying JavaScript: Politeness on the Web | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" />
+</head>
+<body>
+<header id="title-block-header">
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/blogs">/blogs</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title">Justifying JavaScript: Politeness on the Web</h1>
+<p class="date">23rd September 2024</p>
+</header>
+<p>There are a few things which I block on the web. Javascript, cookies
+and adverts are the main ones, as well as redirecting some particularly
+addictive web services to about:blank/less addictive services to stop me
+using them altogether. But Javascript (and cookies) seem to cause a bit
+of a problem. Many sites don’t seem to like you blocking them.</p>
+<h2 id="but-why-block-javascript">But why block JavaScript?</h2>
+<p>I am aware of the risk of this article becoming a philosophical
+debate along the lines of “well really, you shouldn’t <em>be</em>
+blocking JavaScript, it’s considered a core part of how websites work.
+Mind, I frankly can’t see any way of explaining this predicament without
+an explanation of the relatively complex considerations that went into
+doing so. And so:</p>
+<p>My typical rebuttal is thus: “I shouldn’t <em>need</em> to block
+JavaScript, I only do because it’s not used for its defined purpose as a
+core web technology”. Well - I suppose in a very fast and loose sense,
+it sort of still is, but there is nuance here. Javascript exists as a
+programming language which is mostly fully featured and can be made to
+do anything (effectively) to web pages within a browser. If you use the
+legal principle of spirit rather than letter, then JavaScript was
+intended as a way to make things happen on a webpage. It is the
+puppetmaster to your HTML and CSS, it manipulates them in real-time. It
+was never really intended as a way to write full desktop
+applications.</p>
+<p>And so, why do we have the situation we have now - yet another week,
+yet another 15 web applications added to the ever expanding internet?
+Well, if you interpret by the letter, then <em>technically</em> the
+JavaScript standard has just enough power in it to enable you to write a
+good desktop application with a very easy to write frontend and
+relatively standard backend. Throw in for free the almost total
+platform-agnosticism and it’s rather obvious why we are in the current
+situation.</p>
+<p>Unfortunately, that is what spoils JavaScript for me - the fact that
+people don’t use the right tool for the job any more. Instead of using
+JavaScript as intended, to make little scripts (a few hundred kilobytes
+at most in size), many sites now insist on loading tens of megabytes of
+JavaScript frameworks, the majority of whom’s features are left entirely
+untouched for the duration of runtime. <a
+href="https://en.wikipedia.org/wiki/Minification_(programming)">Minification</a>
+and <a href="https://en.wikipedia.org/wiki/Gzip">GZipping</a> are really
+just workarounds which highlight the problem, rather than addressing the
+root cause of it.</p>
+<p>Of course, there are the obvious tracking issues too: combined with
+cookies, JavaScript can be used to track you across many different
+websites, and allow a profile to be built from your browsing activities.
+Whilst not impossible, it is significantly more difficult to track
+effectively static HTML requests, and so most websites simply won’t
+bother.</p>
+<h2 id="courtesy-and-politeness">Courtesy and politeness</h2>
+<p>My reasons for not using JavaScript are not the main focus of this
+article - the reactions of those who disagree with me are. By “those”, I
+am in fact not referring to humans, but websites, and the humans who
+designed those websites. On the majority of web apps, NoScript users are
+often treated with (if they’re lucky) an infinite spinning circle which
+will never disappear. It has no way of disappearing! I’d in fact be
+willing to bet that the developers of most of these sites never even
+bothered to check what happened when you tried to load them with no
+script, as there seems to be a conception that users with NoScript
+enabled don’t want to view the app anyway.</p>
+<p>If web apps are inevitable (as so they would seem) and people aren’t
+going to write a desktop app even when they really should, then can’t we
+at least have some sort of a standard for addressing noscript users,
+instead of the poor loading experience or blank white pages we are
+treated to now?</p>
+<p>Given that one of the most brilliant things about JavaScript is its
+complete control over the DOM (the programmatic representation of all
+the things you see on the screen), why are sites not more noscript
+friendly? The solution is pretty simple to me. Many websites load a
+blank HTML file, then use DOM construction methods to build the page
+using your device (rather than sending a pre-built HTML page). Why a
+blank page? If your plan is to use DOM construction methods once
+JavaScript is available, then why not write a few more lines to
+deconstruct an existing DOM?</p>
+<p>If, instead of a blank page, users were served something more along
+the lines of:</p>
+<p><strong><code>JavaScript Required</code></strong></p>
+<p><code>This is a web app, and can't run without using JavaScript. Your browser either doesn't support JavaScript or it has been disabled. Please either use a browser which supports JavaScript, or reference your browser's manual for instructions of how to enable it</code></p>
+<p>then the first line of the JavaScript for the app could remove that,
+as those users would not need to see it. This is precisely what I did
+with the <a
+href="https://tomprobyn.uk/blogs/projects/ratio_clock/app">simplified
+ratio clock</a>. There is no (reasonable) way in which that could work
+without JavaScript, but instead of showing those users who don’t use
+JavaScript a completely blank page, I give them a short-but-to-the-point
+error message:</p>
+<p><code>If you cannot see the clock here, enable JavaScript and try again.</code></p>
+<p>I didn’t feel it necessary to give the users detailed instructions as
+the sort of people using this site generally don’t need them. They’re
+the sort of people who are already all-to-used to seeing infinitely
+spinning wheels, and questioning whatever ungodly force it was that ever
+lead them to disable JavaScript.</p>
+<p>This isn’t a new idea either - many websites do already do this which
+is fantastic. Google Maps even had a little easter egg hidden in the
+NoScript page! What I am slightly annoyed about is the prevalence of
+websites which <em>don’t</em> adhere to this sort of thing. It’s
+something you only really notice when you do feel the need to disable
+JavaScript and have a poke around the web. What I think should happen is
+more sites should have an obligation to their users to serve them the
+information they want, regardless of the format they choose to view it
+on. A standard of sorts could be helpful, and so:</p>
+<h2 id="the-proposal">The proposal</h2>
+<p>Here it is then, my take on the matter. This is what I think should
+happen if a site absolutely needs JavaScript.</p>
+<ol start="0" type="1">
+<li><p>Do you actually <em>need</em> JavaScript? Why do you need it? Is
+it to do something that specifically requires JavaScript, or could you
+do it using forms, links, images, etc? It might be less fancy but it’ll
+be far more standardised and longevous</p></li>
+<li><p>Build only the JavaScript you need. Don’t dump an enormous
+JavaScript library full of functions you don’t need onto your users.
+They will appreciate the speed and increased compatibility; you will
+enjoy far lower bandwidth costs.</p></li>
+<li><p>Consider noscript users. Understand who they are and why they
+disable scripts - there are more reasons than just tracking
+avoidance.</p></li>
+<li><p>Ask yourself why you want your users to unblock JavaScript? Is it
+just to make the site prettier? Would it still mostly work without it?
+If it isn’t strictly necessary, then don’t ask users to unblock it, just
+build your site in a more robust way.</p></li>
+<li><p>Carefully consider <em>how</em> you ask your users to unblock
+JavaScript, and remember that this is your last resort. Remember that
+you are asking a favour of your user, and they don’t have to do this.
+They are more than welcome to go and find somebody else doing exactly
+what you do without using JavaScript.</p></li>
+<li><p>Write a default message which will be shown to all users without
+JavaScript enabled. Give them reasons for being asked to unblock
+JavaScript, not just “Please unblock JavaScript” or “This site works
+better with JavaScript”. Tell them <em>specifically</em> what will break
+and justify why you can’t just use HTML to do it.</p></li>
+</ol>
+<p>I think if many websites implemented these steps (or something less
+biased and opinionistic, founded on actual user research, but similar to
+these steps) then the web would be far better for Noscript users. No
+longer would we be excluded from websites which should really just be
+collections of <code>&lt;form&gt;</code> or <code>&lt;a&gt;</code>
+elements, and websites which really needed JavaScript would only use it
+for the things it was <em>absolutely</em> necessary for. Unfortunately,
+that isn’t going to happen, but it’s a nice thought, isn’t it?</p>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/javascript">javascript</a>
+<a class="tag" href="https://tomprobyn.uk/tags/web">web</a>
+<a class="tag" href="https://tomprobyn.uk/tags/coding">coding</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2024. <a href="./licenses">Licenses</a></p>
+</footer>
+</body>
+</html>
