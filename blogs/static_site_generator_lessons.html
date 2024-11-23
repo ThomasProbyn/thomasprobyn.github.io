@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <title>Why I built a static site generator | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://tomprobyn.uk/styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/blogs">/blogs</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title">Why I built a static site generator</h1>
+<p class="date">23rd November 2024</p>
+</header>
+<p>“Don’t re-invent the wheel” has its place. The problem is when you
+over-generalise the sentiment - you end up ignoring the problems simply
+because solving them is, itself, a bigger problem.</p>
+<p>On Thursday, I finally gave up with the system I had used to generate
+this site previously. I was using a Python script which I had written to
+effectively take the human-readable MarkDown files I had written and
+batch convert them over to a machine-readable HTML format for posting on
+the web. This is, <em>strictly</em> speaking, a static site generator.
+It generates a series of HTML web-pages which your browser can process,
+which don’t require a server at all (apart from to actually transfer the
+files across the web). However, for things like the list of latest blogs
+on the home page, I had to manually write those by hand, which quite
+often resulted in mistakes and broken links on the site. There was a lot
+to remember to do before I could publish a blog. My process looked like
+this:</p>
+<ul>
+<li>Write a blog you’re happy with</li>
+<li>Add in things like the nav bar and title using MarkDown</li>
+<li>Use the Python script to convert the files over to HTML</li>
+<li>Edit the home page to have a link to the new blog</li>
+<li>Edit the category page to have a link to the blog</li>
+<li>Manually add a new item to the RSS feed so that people who subscribe
+get a ping</li>
+<li>Push to GitHub for the automatic build and deployment process to be
+handled</li>
+<li>After a minute or two, the update is visible</li>
+</ul>
+<p>There were so, so many problems with this system. Foremost, there
+were so many manually edited files where things kept going wrong. I have
+found broken links on the site which have sat there undetected for
+months, which is the sort of thing that keeps me up at night! Secondly,
+I am a very big fan of semantic separation. When I write a blog in
+MarkDown, I shouldn’t have to handle things like the navbar etc: that
+should be handled during the compilation process. Also, I wasn’t happy
+with the organisation system. My old site had 4 main categories of
+blog:</p>
+<ul>
+<li>Walks and outdoors</li>
+<li>Thoughts and ideas</li>
+<li>Projects</li>
+<li>Art and music</li>
+</ul>
+<p>When I was picking those categories, I tried to find 4 which
+reflected me, and the idea always was that I could add more if the need
+ever arose. But I didn’t want to add a whole new category for just one
+blog - that wouldn’t feel right. I ended up stuffing most things into
+“thoughts and ideas” as a catch-all category, that also didn’t feel
+quite right either. I had seen a lot of sites on the indie web using
+tags as an architecture for organising posts.</p>
+<p>In a tags architecture, posts exist as an independent, disorganised
+entity. There is a folder which contains every single post, regardless
+of date, time, topic, length etc. Each post has thematic tags attached
+to it, and during the build process, the compiler reads these tags, and
+builds a new page for each one. Every post tagged with the specific tag
+(say for example posts tagged as “walks”) will be linked from this page.
+That means that anyone who wants to read about all of my walks needs to
+go onto the tags page, find the “walks” tag, and click through all the
+blogs on there.</p>
+<p>Tags have another major advantage over my old hierarchical system
+too: one post can be given multiple tags. If I had, in the past, written
+a post which fell both into the categories of “walks” and “ideas”, I’d
+have had to choose which of those categories to file it under. This is
+why I kept filing things under “thoughts and ideas”, as I specifically
+kept it as a rather ambiguous category; what <em>is</em> a blog if not a
+collection of thoughts and ideas, after all?</p>
+<h2 id="the-wheel">The wheel</h2>
+<p>Re-inventing the wheel, then. If what I wanted was a dynamically
+generated home page and a tags architecture, then I could have used
+plenty of pieces of open-source software to do that for me.</p>
+<p>One of the points I am very much trying to hammer in through my
+Honours dissertation is that not all software is suitable in all
+scenarios. I’m focusing on digital Integrated Library Systems (ILS) for
+home use there, and my own experience over the summer of trying to find
+a piece of software which would allow me to tag my books without having
+to set up complex systems which would benefit a large lending library
+but which are to me, a royal pain.</p>
+<p>Indeed, this seems to hold true of static site generators too. What I
+wanted was something that could: - Batch convert my MarkDown to HTML -
+Build a dynamic home page etc. - Build a tags architecture - Build the
+relevant RSS feeds</p>
+<p>All I found I could get was something that would do that, but
+overcomplicated the process and included things like HTTP servers,
+preview environments, templates, databases, etc. It was too much. I
+understand that there are people in the world who really benefit from
+being able to shave a few seconds off their site’s build time, but I am
+not one of them. I am more than happy to hit build and wait for a few
+minutes whilst my site does its thing.</p>
+<p>All I needed really was something that could quickly feed the
+relevant files into Pandoc for conversion, and then build a few
+“pseudo-markdown” files with the dynamic contents, and feed those into
+Pandoc too.</p>
+<p>I started out by defining my design goals for this system:</p>
+<ul>
+<li>Write in MarkDown, convert to HTML</li>
+<li>MarkDown supports inline HTML</li>
+<li>Auto-generate RSS/ATOM feed based on YAML headers</li>
+<li>/latest redirects to latest blog automatically</li>
+<li>POSSE syndication of notes</li>
+<li>Pandoc based build process</li>
+<li>Tag-based organisation system</li>
+</ul>
+<p>Most of these are implemented, some of them (like /latest and POSSE)
+I still need to do at some point soon.</p>
+<p>I drew this little data-flow chart explaining my build chain, and
+then went and wrote that in Python and a bit of Bash.</p>
+<figure>
+<img src="../images/website_buildproc_diagram.jpeg"
+alt="A hand-drawn data diagram which shows lots of connections between nodes representing the processes needed to build the site automatically" />
+<figcaption aria-hidden="true">A hand-drawn data diagram which shows
+lots of connections between nodes representing the processes needed to
+build the site automatically</figcaption>
+</figure>
+<p>And really, this is why I built a static site generator. Not because
+I could do it better (in fact it currently takes 1 minute 30 seconds to
+build this site - I think I might have got a loop wrong somewhere), but
+because I could do it better <strong>for me</strong>. When I was 400
+lines of Python deep, silently lamenting at at Pandoc for not doing what
+I was expecting (my fault, naturally, I’d messed something up; pandoc is
+amazing), the available options did look appealing. But I am very glad I
+persisted, because I was able to sit down and think about what I needed,
+then build it all in a day.</p>
+<p>The problems we work on these days are far more complex than wheels.
+We have far more moving parts and systems, and sometimes it can take
+burning them all down and starting right from scratch with the scars and
+pains which the last system gave you to actually make progress.</p>
+<p>Those who know me personally are absolutely sick to death of hearing
+my catchphrase, “Progression is not always progress”. It means making a
+change for the sake of making a change is not the way to progress
+something - it reflects the lack of forethought I see in a lot of
+decision making. I’d like to propose a spin-off: “Progress is rarely
+progression”. This phrase means something distinctly different;
+continuing with the status quo might keep us moving in what feels like
+the right direction, but that’s no good if what we really need to do is
+stop and go back to the beginning of the problem.</p>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/web">web</a>
+<a class="tag" href="https://tomprobyn.uk/tags/code">code</a>
+<a class="tag" href="https://tomprobyn.uk/tags/thoughts">thoughts</a>
+<a class="tag" href="https://tomprobyn.uk/tags/indie-web">indie-web</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2024. <a href="https://tomprobyn.uk/licenses">Licenses</a></p>
+</footer>
+</body>
+</html>
