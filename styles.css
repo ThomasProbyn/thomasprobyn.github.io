@@ -156,3 +156,12 @@ summary {
     font-size: calc(var(--body-size) + 3pt);
     font-weight: 700;
 }
+
+.parent_for_layout_grid {
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+.parent_for_layout_grid > p {
+    margin-top: auto;
+    padding-left: 10px;
+}
