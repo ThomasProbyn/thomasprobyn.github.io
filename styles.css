@@ -183,3 +183,7 @@ figcaption {
     color: gray;
 }
 
+footer {
+    bottom: 0;
+    border-top: 1px solid var(--hr-color);
+}
