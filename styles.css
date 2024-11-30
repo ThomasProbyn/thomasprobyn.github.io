@@ -45,6 +45,9 @@ body {
     nav > * {
         display: block;
     }
+    .parent_for_layout_grid {
+        display: block;
+    }
 }
 
 h1 {
@@ -106,6 +109,7 @@ ul {
 
 li {
     margin-bottom: 15px;
+    margin-left: 15px;
 }
 
 img {
