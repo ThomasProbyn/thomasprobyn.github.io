@@ -45,8 +45,16 @@ body {
     nav > * {
         display: block;
     }
+}
+
+@media only screen and (min-width: 400px) {
     .parent_for_layout_grid {
-        display: block;
+        display: grid;
+        grid-template-columns: 40% 60%;
+    }
+    .parent_for_layout_grid > p {
+        margin-top: auto;
+        margin-left: 25px;
     }
 }
 
@@ -109,7 +117,7 @@ ul {
 
 li {
     margin-bottom: 15px;
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
 img {
@@ -161,11 +169,9 @@ summary {
     font-weight: 700;
 }
 
-.parent_for_layout_grid {
-        display: grid;
-        grid-template-columns: 40% 60%;
-    }
-.parent_for_layout_grid > p {
-    margin-top: auto;
-    padding-left: 10px;
+nav {
+    border-bottom: 1px solid var(--hr-color);
+    padding-bottom: 15px;
 }
+
+
