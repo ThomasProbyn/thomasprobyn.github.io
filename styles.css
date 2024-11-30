@@ -177,6 +177,12 @@ nav {
     padding-bottom: 15px;
 }
 
+nav > * {
+    text-decoration: none;
+    padding: 5px;
+    border: 1px solid var(--link-color);
+}
+
 figcaption {
     text-align: center;
     font-size: calc(var(--body-size) - 3pt);
