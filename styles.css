@@ -47,6 +47,8 @@ body {
     }
 }
 
+
+
 @media only screen and (min-width: 400px) {
     .parent_for_layout_grid {
         display: grid;
@@ -55,6 +57,18 @@ body {
     .parent_for_layout_grid > p {
         margin-top: auto;
         margin-left: 25px;
+    }
+    nav > * {
+        border-bottom: 3px solid var(--link-color) !important;
+        border-radius: 5px;
+        
+    }
+    .tag {
+        text-decoration: none;
+        padding: 5px;
+        border: 1px solid var(--link-color);
+        border-bottom: 3px solid var(--link-color) !important;
+        border-radius: 5px;
     }
 }
 
@@ -83,7 +97,7 @@ a {
     padding: 1px;
 }
 
-*:focus {
+*:focus:not(nav>*) {
     border-bottom: 2px solid var(--text-color);
     background-color: var(--highlight-color);
     color: var(--highlight-text-color);
@@ -131,6 +145,7 @@ img {
     margin: 0 auto;
     object-fit: cover;
     padding: 10px;
+    border-radius: 20px;
 }
 
 table {
