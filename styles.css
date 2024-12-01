@@ -208,3 +208,17 @@ footer {
     bottom: 0;
     border-top: 1px solid var(--hr-color);
 }
+
+.skiplink {
+    position: absolute;
+    background-color: var(--background-color);
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    transform: translateY(-100%);
+    top: 0%;
+    transition: transform 0.3s;
+}
+
+.skiplink:focus {
+    transform: translateY(0%);
+}
