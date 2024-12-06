@@ -90,14 +90,12 @@ h1, h2, h3 {
 
 a {
     color: var(--link-color);
-/*     transition: color 0.3s ease; */
-    animation-name: unBoldLinks;
-    animation-duration: 0.1s
     text-decoration: underline;
     padding: 1px;
+    transition: font-weight 0.1s;
 }
 
-*:focus:not(nav>*) {
+*:focus:not(nav>*):not(.tag) { /* Yellow highlight on everything selectable, not nav/tag though */
     border-bottom: 2px solid var(--text-color);
     background-color: var(--highlight-color);
     color: var(--highlight-text-color);
@@ -106,9 +104,6 @@ a {
 }
 
 a:hover {
-/*     font-weight: 800; */
-    animation-name: boldLinks;
-    animation-duration: 0.1s;
     font-weight: 700;
     text-decoration: none;
 }
@@ -165,16 +160,6 @@ td, th {
 
 code {
     color: rgb(200,0,100);
-}
-
-@keyframes boldLinks {
-    0% {font-weight: 400;}
-    100% {font-weight: 700;}
-}
-
-@keyframes unBoldLinks {
-    0% {font-weight: 700;}
-    100% {font-weight: 400;}
 }
 
 details {
