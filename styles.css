@@ -211,7 +211,7 @@ footer {
 input[type=text] {
     border: 1px solid var(--text-color);
     border-radius: 5px;
-    width: 100%;
+    width: 96%;
     padding: 10px;
     background-color: var(--background-color);
     color: var(--text-color);
