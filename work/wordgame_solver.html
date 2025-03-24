@@ -8,7 +8,7 @@
   <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
   <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
   <link rel="me" href="https://mastodon.scot/@tomprobyn">
-  <title>Wordgame Solver | Tom Probyn's Personal Site</title>
+  <title>Word game Solver | Tom Probyn's Personal Site</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -38,9 +38,227 @@
   <a href="https://tomprobyn.uk/blogs">/blogs</a>
   <a href="https://tomprobyn.uk/everything">/everything</a>
 </nav>
-<h1 class="title" id="maincontent">Wordgame Solver</h1>
+<h1 class="title" id="maincontent">Word game Solver</h1>
 </header>
-<p>This is a test page</p>
+<p>In which I redesign a text-based command line tool in order to
+represent it graphically.</p>
+<h3 id="skills-used">Skills used</h3>
+<ul>
+<li>Python3</li>
+<li>Core Web Technologies (HTML5-CSS3-JavaScript ES6+2020)</li>
+<li>Cross-language code translation</li>
+<li>Code refactoring</li>
+<li>User Interface Design</li>
+<li>Graphic Design Best Practice</li>
+<li>Prototyping for development</li>
+</ul>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>In response to a brief for a Computer Science class on filtering
+algorithms, I built an algorithm capable of accurately solving a certain
+highly popular (and <a
+href="https://arstechnica.com/gaming/2022/01/wordle-and-ip-law-what-happens-when-a-hot-game-gets-cloned/">trademarked
+- though not entirely original</a>) word <a
+href="https://www.nytimes.com/games/wordle/index.html">game</a>. The
+algorithm was implemented in Python3 over a few days, and works almost
+flawlessly. The answers it produces almost always complete the puzzle
+within the requisite 6 tries; the one time this failed to be the case
+was down to human error.</p>
+<p>And indeed it is that human error issue which led to the selection of
+this project for re-design. Whilst the algorithm performed perfectly,
+the user needed to enter commands in an essoteric text-based format in
+order to actually <em>access</em> the algorithm.</p>
+<figure>
+<img src="../images/work/old_rules_system.jpg"
+alt="A typical example of the old text-based rules system which was used to define the positions and values of letters in the word." />
+<figcaption aria-hidden="true">A typical example of the old text-based
+rules system which was used to define the positions and values of
+letters in the word.</figcaption>
+</figure>
+<h2 id="problems">Problems</h2>
+<p>The text-based system caused two chief problems: the user had to
+learn and remember all of the operators and syntax required to add a
+rule into the list; and the inconsistent syntax of the system made it
+unclear what parameters a particular operator could take (ie. some
+operators could take both a position argument <em>and</em> a value
+argument).</p>
+<p>The algorithm, whilst efficient, was also built a few years ago and
+was not reflective of my ability to write high-quality code. A complete
+refactoring would be required in order to try and separate the core
+algorithm from the shibboleths of operating-system specific knotting and
+bodges.</p>
+<p>This, though, would provide the perfect opportunity to translate the
+algorithm into JavaScript for re-implementation. I planned to use core
+web technologies in order to implement the algorithm online such that it
+might make it more accessible, especially in a cross-platform
+context.</p>
+<h2 id="code-re-implementation">Code Re-implementation</h2>
+<p>The process of re-implementation started by looking at the original
+high-level abstracted algorithm design, marginally edited here to remove
+aforementioned anachronisms:</p>
+<pre><code>Import word list from file
+Objectify word list; make it indexable
+Import rules; objectify and make them indexable
+
+For each rule:
+    Check rule type
+    For each word in the list:
+        If the word DOES NOT match the rule, delete it from the list
+
+Output the word list</code></pre>
+<p>This is the basic structure for the main loop of the programme, not
+including the filtering systems. In order to translate this into
+JavaScript, I chose to use JavaScript-specific object formats in order
+to store data. This would eliminate the non-exact representation system
+for rules which had been used in the original Python algorithm, and
+allow the algorithm to hold an internal representation of the data which
+could be set via an API.</p>
+<p>This is a significantly better system than the python implementation,
+which required the users to attempt to understand the internal
+organisation of the algorithm in order to use it. This semantically
+separates the data from the way in which it is processed, which is
+significantly better programming practice.</p>
+<h3 id="object-structure">Object Structure</h3>
+<p>When defining the object structure itself, an array containing many
+sub-objects made the most sense, as throughout the process, rule
+creation is dynamic, with limits defined purely by the machine’s memory
+capacity. Each sub-object could be given a heritable structure from a
+template super-object, meaning the API could insert a new object by
+simply cloning the super-object into a free memory slot, then populating
+it with the arguements passed to the command.</p>
+<p>The super-object holds three parameters, some of which are not needed
+for certain rules, but which could in these cases default to holding a
+null value. These paramerters are: <code>Type (string)</code> - the type
+of rule being held in this slot and determining which type of filtering
+should be used, <code>value (character)</code> - generally defining the
+particular letter to filter for, and finally,
+<code>position [optional](integer)</code> - defining where in the word a
+particular value occured. These three parameters, when used together can
+adaquately describe any concievable Word Game™ play state.</p>
+<h3 id="initial-user-interface">Initial User Interface</h3>
+<p>Once these elements were assembled, the algorithm could accurately
+represent the current state of play, as well as process using the
+filters, initial tests in the JavaScript showed the output to be
+identical to the Python implementation on a given ruleset, meaning the
+code translation had likely been successful pending further examination.
+In order to make testing easier, I put together a small user interface
+which, though far from final, could allow a user to input rules
+graphically:</p>
+<figure>
+<img src="../images/work/firstVersion.jpg"
+alt="The initial user interface" />
+<figcaption aria-hidden="true">The initial user interface</figcaption>
+</figure>
+<p>The interface provoked some thoughts about general structure and
+navigation which went on to shape the next iteration:</p>
+<ul>
+<li>The ruleset, whilst displayed here, is not necessary to use the
+software successfully</li>
+<li>The word list could be confusing, as well as what the user is meant
+to do with it</li>
+<li>Rule types need to be given names outside of their programmatic
+entities (“doesNotContain”)</li>
+</ul>
+<h2 id="second-ui-iteration-improving-experience-and-navigation">Second
+UI Iteration: Improving experience and navigation</h2>
+<p>The second UI iteration was designed initially on paper:</p>
+<figure>
+<img src="../images/work/split-screen-paper.jpeg"
+alt="An iconic representation of using a split-screen UI" />
+<figcaption aria-hidden="true">An iconic representation of using a
+split-screen UI</figcaption>
+</figure>
+<p>The idea was to use a split-screen system, with the left panel
+displaying a list of the rule set, and the right panel displaying the
+potential words which could be used to solve the game. Instead of using
+algorithm-specific terminology to describe the rule name, more
+user-freindly options are now used, describing what each option
+means:</p>
+<figure>
+<img src="../images/work/user-friendly-options.jpg"
+alt="A dropdown list with more user-friendly descriptions of rulesets" />
+<figcaption aria-hidden="true">A dropdown list with more user-friendly
+descriptions of rulesets</figcaption>
+</figure>
+<p>This version now has a particular flow to it. The user adds a rule by
+starting at the top, the rule then moves over to the left panel, and
+updates the right panel with the final output. It follows the
+input-process-output mantra from computing.</p>
+<figure>
+<img src="../images/work/graphics.jpg"
+alt="A slightly better UI using a split-screen system" />
+<figcaption aria-hidden="true">A slightly better UI using a split-screen
+system</figcaption>
+</figure>
+<p>After an analysis of this design, I came away with a few extra
+pointers:</p>
+<ul>
+<li>Split-screen UIs do not work well at all on mobile; changing to a
+different system depending on screen size would introduce
+inconsistency</li>
+<li>Drop-down boxes for selecting multi-option toggleable functionality
+can feel like they lean towards a preference for the default, and can
+hide important functionality</li>
+<li>Inputting position as a number can be confusing, as it requires
+counting the number of letters individually</li>
+</ul>
+<h2 id="third-ui-iteration-improving-top-level-design">Third UI
+Iteration: Improving top-level design</h2>
+<p>Improving upon the aforementioned points, and increasing the overall
+usability of the system, this prototype came to be the final design:</p>
+<figure>
+<img src="../images/work/mockup.jpg"
+alt="A prototype of the final design" />
+<figcaption aria-hidden="true">A prototype of the final
+design</figcaption>
+</figure>
+<p>The design is now significantly more focused. Analysis of the first
+version found that showing the internal working of the rules and the
+algorithms was unnecessary, and priority should be given to what it is
+that users want: an answer. To this end, only a single word is
+displayed.</p>
+<p>In terms of functionality selection, the togglebox system exposes the
+functionality previously hidden behind a drop-down menu. This also
+allows all instructions to be on screen at all times, meaning that it is
+clear both what the programme is doing and is not doing.</p>
+<p>Parameter entry is now significantly simplified too: the “letters”
+box automatically focuses as soon as a rule has been selected, allowing
+easy keyboard navigation. For entering the position of a letter, a
+checkbox system graphically represents the letter position as it would
+be represented in Word Game™. This makes entry significantly less
+confusing.</p>
+<p>The addition of a certainty bar is not something which the algorithm
+currently accomodates, but which could help users get an idea of how
+close they are to an answer, perhaps more crucial in latter game stages
+than earlier, but still likely of use. The percentage is calculated
+using a bit of mathematical trickery to scale percentages at different
+non-linear gradients, relative to the degree of certainty. For instance,
+if out of the 70,000 words the programme knows about, it has eliminated
+all but 30, the mathematical certainty would display 99.9%. However, 30
+words when only 6 may be played in total is still a long was off in real
+terms, so the scaling adapts that to closer to 90% certainty. That is to
+say, the displayed percentage is not mathematically accurate at all, but
+the incrementation <strong><em>feels</em></strong> significantly more
+accurate perceptively when using the system.</p>
+<h2 id="final-solution">Final Solution</h2>
+<p><a href="../assets/work/word_game/special.html"><em>You can try the
+final version at this link</em></a></p>
+<figure>
+<video src="../images/work/demonstration.mov" controls=""><a
+href="../images/work/demonstration.mov">A video demonstration of the
+final version</a></video>
+<figcaption aria-hidden="true">A video demonstration of the final
+version</figcaption>
+</figure>
+<h2 id="reflection">Reflection</h2>
+<p>I am pleased with the outcome of the final version of this project,
+and I feel that it has demonstrated my improved programming and
+interface design skills since the algorithm’s inception. There are some
+functions which I feel are still missing, such as the ability to edit
+the rules which the algorithm is using to filter words, or the number of
+letters in the word, but these would be outside of the scope of this
+project which set out to improve the usability of the filtering
+algorithm.</p>
 <hr>
 <p>Tagged as: 
 <a class="tag" href="https://tomprobyn.uk/tags/work">work</a>
