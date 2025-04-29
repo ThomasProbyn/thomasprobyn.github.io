@@ -8,7 +8,7 @@
   <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
   <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
   <link rel="me" href="https://mastodon.scot/@tomprobyn">
-  <title>Tag: programming | Tom Probyn's Personal Site</title>
+  <title>Pandoc, images and accessibility | Tom Probyn's Personal Site</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -38,32 +38,33 @@
   <a href="https://tomprobyn.uk/blogs">/blogs</a>
   <a href="https://tomprobyn.uk/everything">/everything</a>
 </nav>
-<h1 class="title" id="maincontent">Tag: programming</h1>
+<h1 class="title" id="maincontent">Pandoc, images and accessibility</h1>
+<p class="date">29th April 2025</p>
 </header>
-<p>You can follow this tag’s <a href="./feed.xml">RSS Feed</a> to see
-new posts tagged with it.</p>
-<p><strong>Pages tagged with this tag:</strong></p>
-<ul>
-<li><a href="../../blogs/nospam.html">Why E-Mail on the internet doesn’t
-really work</a></li>
-<li><a href="../../blogs/static_site_generator_lessons.html">Why I built
-a static site generator</a></li>
-<li><a href="../../blogs/time_signal.html">The Greenwich Time Signal in
-your very own home!</a></li>
-<li><a href="../../blogs/ratio_clock.html">The simplified ratio clock: A
-ridiculous mathematical timepiece</a></li>
-<li><a href="../../blogs/data_wrangling_relays.html">Problem solving and
-the transmitter map</a></li>
-<li><a href="../../blogs/new_site_links.html">A new website (with some
-broken links)</a></li>
-<li><a href="../../blogs/vb6_browser.html">VB6 is back! How I learned to
-code</a></li>
-<li><a href="../../blogs/justifying_js.html">Justifying JavaScript:
-Politeness on the Web</a></li>
-<li><a href="../../notes/test_note.html">Testing, Testing 123!</a></li>
-<li><a href="../../notes/pandoc_image_accessibility.html">Pandoc, images
-and accessibility</a></li>
-</ul>
+<p>By default, <a href="https://pandoc.org/">pandoc</a>, which <a
+href="https://www.tomprobyn.uk/blogs/static_site_generator_lessons.html">I
+use to make this site</a> uses the alt text attribute in Markdown as the
+caption for any given image. I was not happy with this behaviour, as it
+does not allow things made with Markdown to be fully accessible. I tried
+searching online for an answer but couldn’t find one immediately, but
+looking through the manual, I noticed that any key/value pair can be
+passed using the following syntax:</p>
+<p><code>![caption](image-url){key=value}</code></p>
+<p>I tried experimentally passing the key <code>alt</code> with a
+different value, and it works a charm! So if you’re looking to add
+(proper) alt text to your pandoc generated HTML documents, here’s the
+example syntax you need:</p>
+<p><code>![The old castle walls](./assets/images/old_castle.jpg){alt="An image of the walls an old castle. There is a large brown wooden door in the centre of the walls. Above them is a blue sky."}</code></p>
+<p>I have experimentally tried this with my <a
+href="../blogs/restalrig_history.html">latest blog about a trip to
+Restalrig</a>, so you can see the effect of this over there. I will add
+this to all future blogs too.</p>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/web">web</a>
+<a class="tag" href="https://tomprobyn.uk/tags/pandoc">pandoc</a>
+<a class="tag" href="https://tomprobyn.uk/tags/programming">programming</a>
+</p>
 <footer>
   <p>Contents © Tom Probyn 2025. <a href="https://tomprobyn.uk/licenses">Licenses</a>. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Site Host's Privacy Policy</a></p>
 </footer>
