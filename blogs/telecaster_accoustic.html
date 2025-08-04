@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <title>The Telecaster sounds fantastic unplugged, actually | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://tomprobyn.uk/styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+  <a class="skiplink" href="#maincontent">Skip to main content</a>
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/contact">/contact</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title" id="maincontent">The Telecaster sounds fantastic
+unplugged, actually</h1>
+<p class="date">4th August 2025</p>
+</header>
+<p>Yes, yes no blog in three months… [Insert excuse here].</p>
+<p>In fairness, I do <em>actually</em> have a bit of an excuse: I’ve
+been doing a lot more recording and music stuff recently than I have
+been for a few months. And during the course thereof, I have had cause
+to record an acoustic guitar. The only problem therewith: I don’t have
+one. I do, however, have a lovely <a
+href="https://en.wikipedia.org/wiki/Telecaster">Tele</a>. Electric
+guitars aren’t generally much use when they are not plugged in to an
+amp, or so I thought, but it turns out that foregoing the pickups can
+actually give you some pretty interesting results if done with a bit of
+forethought and technique.</p>
+<h2 id="recording">Recording</h2>
+<p>Speaking of technique, mic selection is something I have begun to
+question a little. A bit like guitar selection too - I think people
+become attatched to certain ways of doing things, and whilst I agree
+that certain tools do certain specific jobs very well, I generally also
+take the view that the best mic is the one that you have to hand
+currently. I will use an SM57 for quite literally everything, I love the
+way it sounds on drums, amps, guitars, piano, and especially my voice.
+Maybe that’s just preference or inexperience talking but having handled
+significantly more expensive mics in my time, I’ve still not found
+anything that sounds quite as good over quite such a wide array of
+sources as my 57. It’s not even a real 57! It’s a £10 knockoff! Perhaps
+I just got very lucky, but there’s a part of me and my style that’s in
+that mic now I think.</p>
+<p>Anyway, I placed the 57 about the right distance perpendicular to the
+neck pickup on the Tele, angled slightly towards the bridge because
+(perhaps purely psychologically) that gave me the impression I’d get the
+brighter “bridg-ier” sound that I was looking for. My Tele does sound
+nice just listening in the room when unplugged, it has a lovely
+chorusing between some of the harmonics, and I hoped that by aiming
+there I’d capture some of that.</p>
+<p>I should also add that I was recording through a Behringer MDX2100
+compressor (again, another one of those lucky finds that was stupidly
+cheap second-hand but which seems to make anything I put through it
+sound better (except guitar D.I.s. It <strong>sucks</strong> with guitar
+D.I.s for some reason)). I pressed record and proceeded to do <em>a
+number</em> of takes until I had one with acceptable timing. I ended up
+double tracking and panning slightly left and right too.</p>
+<p>The recording sounded about how one might expect: Lots of high end,
+barely any low end, oodles of attack and basically zero sustain. In
+fact, it is these very complaints which I will now use the
+aforementioned forethought and technique to solve, becuase I suspect
+that this is what puts people off recording electric guitars
+acoustically - processing them to sound nice is a bit difficult.</p>
+<p>This is the raw sound:</p>
+<audio controls>
+<source src="../assets/dfm_guitar_dry.mp3" type="audio/mpeg">
+</audio>
+<h2 id="transience">Transience</h2>
+<p>Perhaps the most obvious thing is the transient-ness of the sound. In
+order to deal with that, heavy compression might do the job, although
+one of the disadvantages of the 57 knockoff is it can be a little noisey
+with the heavier end of the compressor’s reach. Instead, transient
+processing might do the job, although when I tried that, it sounded a
+little too like limiting, everything suddenly felt hugely dynamic in the
+lower volume parts, but anywhere over the threshold sounded limited.
+Perhaps it was bias, but I was excited to try <a
+href="https://analogobsession.com/">AnalogObsession</a> <a
+href="https://www.patreon.com/posts/51962024">FetDrive</a>. This is a
+transient processor based on the 1176, known for extremely fast attack,
+and which applies saturation to the signal over the threshold, rather
+than adjusting it by a factor of the gain over the threshold or simply
+limiting it.</p>
+<figure>
+<img src="../images/analog_obsession_fetsnap_tele_acoustic.jpeg"
+alt="A screenshot of a AudioUnits plugin interface with 4 virtual knobs. The mix is at 100% wet, the tone is sat at 50% between dark and bright, the drive is at 65% and the output is at 0db. The text is red to show that oversampling has been enabled." />
+<figcaption>The settings I used in FetSnap. You may want to try
+experimenting to find the best settings for your recording.</figcaption>
+</figure>
+<p>And this turned out to be just the ticket. With a surpisingly small
+bit of tweaking, this signal no longer sounded harsh, but almost
+compacted and more solid. It wasn’t like an instrument being thwacked,
+it was like an instrument being played, and what’s more, the lack of a
+distracting transient really drew attention to the chorusy sound of the
+tele’s harmonics. This is easily the most important plugin in the chain,
+everything after this point makes it sound better, but without this
+processor, the whole thing falls apart.</p>
+<p>Next up in the chain is an <a
+href="https://www.ikmultimedia.com/">IK</a> <a
+href="https://www.ikmultimedia.com/products/trcomprexxor/">Comprexxor</a>.
+It’s not actually doing any compression (though I think it was at one
+point), it’s actually just adding gain and a little more saturation
+using the tone section. It does slightly thicken the sound up when you
+isolate the gain stage and A/B it, but it’s not the most important
+plugin in the chain by far, just a little tasteful saturation.</p>
+<figure>
+<img src="../images/ik_tr5comprexxor_tele_acoustic.jpg"
+alt="A compressor layout screenshot. The gain is set to 6 out of 10, and the tone knob which controls distortion is set to 1.7 out of 5." />
+<figcaption>IK comprexxor settings</figcaption>
+</figure>
+<h2 id="frequency-response">Frequency Response</h2>
+<p>The next biggest problem after the transience of the signal (which is
+all but solved now) is the frequency response. It’s all high end and no
+body. This would not be a problem if this was a layered element, and in
+fact I’ve left it at just the above processing on other songs where I’ve
+used this trick to create the “phantom acoustic” (where you’ve got an
+acoustic playing the same part as an amped electric to give the whole
+part a little more shine). But this is a lead acoustic part playing big
+open chords, and I want them to resonate and fill the whole mix up.</p>
+<p>The EQP-1 is a tool that is mostly known as a bit of a one-trick
+pony. It does <a
+href="https://en.wikipedia.org/wiki/Pultec_EQP-1#In_use">that cool bass
+thing</a>, but I’ve never really seen anyone use it for much else
+particularly. The Pultec actually has a whole high-end section which can
+do similarly cool things to the low-end section. Because (as I
+understand it at least) the original hardware (and thus the software
+clones simulate this) had two different signal paths, one for
+attenuation, one for boosting, the two different signals would be mixed
+together and sound… interesting. I should really research the technical
+side of what’s going on there, it’s probably something to do with phase
+differences and transient-dependant circuit components reacting
+differently to the differently processed programme material (which does
+sound the exact sort of thing I’m intrerested in), but suffice it to
+say, the settings I used on the guitar sound good.</p>
+<p>The high end attenuation felt like it took away something a little
+lower in the frequency domain than the high end boost added back,
+meaning the piece got more sparkly, but the harsher sounding sibilance
+was gone. This is a techniue I’d applied to vocals before too. I also
+boosted the low end and did not attenuate it at all. This added in a bit
+of body to the sound which was otherwise missing, and compensated for
+the lack of a resonating hollow body in the guitar. One of the important
+things I set on the EQ was opening up the bandwidth to its widest
+setting so that the filters would be very gentle in their response, and
+could influence a wide area of the spectrum.</p>
+<figure>
+<img src="../images/ik_eqp1a_tele_acoustic.jpg"
+alt="Screenshot of an IK EQP-1A plugin. Low end is boosted by 4.9 out of 10, but attenuation is at 0. The frequency setting is 60Hz. The high end is boosted by 3.4 out of 10 and attenuated by 6.9 out of 10, and the frequency is 12Khz. The attenuation switch is in the middle position, 10dB. Bandwidth is at 10 out of 10" />
+<figcaption>EQP-1A doing the EQ work on the guitar</figcaption>
+</figure>
+<h2 id="reverb">Reverb</h2>
+<p>I finished off the chain with a bit of reverb. This added back the
+sustain which an acoustic might otherwise have had. I used <a
+href="https://www.ikmultimedia.com/products/trfarmstoneroom/">The Farm
+Stone Room</a> which is a fantastic sounding room reverb based on the
+Phil Collins drum room apparently. I used it to add a bit more of a
+stereo image, and accentuate some harmonics too, and as it has the
+compression in the famous gated reverb console, it is doing some light
+dynamics processing too, as well as a little EQing. This plugin was more
+of a stylisation for the particular mix I wanted to add the element
+into, rather than something to make it sound more like an acoustic,
+although it sort of does double duty as I would recommend some sort of a
+room reverb for this kind of thing.</p>
+<figure>
+<img src="../images/thefarm_tele_acoustic.jpg"
+alt="A screenshot of a reverb plugin. On the right hand side is a virtual SSL-style mixing console, performing some compression and light EQ correction on a mono channel and mixing with an unprocessed stereo channel. The dry channel is at 0dB. On the left is a visualisation of a stone-walled live room with a drum kit, representing the room sound the plugin emulates. A curtain used to dampen the sound by covering the wall is not in use." />
+<figcaption>The reverb</figcaption>
+</figure>
+<h2 id="the-verdict">The verdict</h2>
+<p>This is the final element, isolated.</p>
+<audio controls>
+<source src="../assets/dfm_guitar_processed.mp3" type="audio/mpeg">
+</audio>
+<p>I think this sounds fantastic, perhaps it’s not 100% identical to an
+acoustic, but in the context of the mix I think it leads the entire song
+despite managing to not intefere with the vocal. Have a listen to the
+final mix of the song (which isn’t getting released I don’t think), and
+see what you think. Excuse Logic’s janky technique for cutting off the
+end of files - do you really think I can be bothered to trim it
+properly?!</p>
+<audio controls>
+<source src="../assets/dfm_full_mix.mp3" type="audio/mpeg">
+</audio>
+<p>I’ve got some other songs I’m really happy with at the moment so will
+hopefully release them very soon!</p>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/thoughts">thoughts</a>
+<a class="tag" href="https://tomprobyn.uk/tags/technology">technology</a>
+<a class="tag" href="https://tomprobyn.uk/tags/music">music</a>
+<a class="tag" href="https://tomprobyn.uk/tags/creative">creative</a>
+<a class="tag" href="https://tomprobyn.uk/tags/ideas">ideas</a>
+<a class="tag" href="https://tomprobyn.uk/tags/problem-solving">problem-solving</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2025. <a href="https://tomprobyn.uk/licenses">Licenses</a>. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Site Host's Privacy Policy</a></p>
+</footer>
+</body>
+</html>
