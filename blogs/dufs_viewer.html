@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <meta name="dcterms.date" content="2025-09-10" />
+  <title>dufs Photo Viewer | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://tomprobyn.uk/styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+  <a class="skiplink" href="#maincontent">Skip to main content</a>
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/contact">/contact</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title" id="maincontent">dufs Photo Viewer</h1>
+<p class="date">10 September 2025</p>
+</header>
+<p><a href="https://github.com/sigoden/dufs">dufs</a> is a fantastic
+piece of software which fulfilled my oddly specific need for a
+fileserver which worked on a local network, felt relatively native,
+could be accessed through a terminal (albeit via SFTP/WebDav), and which
+did not under any circumstance ever make me use Samba. That protocol has
+been a black hole for data for me, I’ve lost so many files using it, it
+was also hugely unstable and lead to me having to restart my headless
+server at least once a day.</p>
+<p>So when I came across dufs, which runs as under 3MB of Rust, and
+provides a Google Drive-eque interface via a local server on the
+browser, with encryption, accounts, the works, I installed and tried it,
+and immediately breathed a sigh of relief that I’d never have to see
+another SMB Error log ever again with any luck.</p>
+<p>One thing I think could be improved about dufs (though which is not
+its primary function) is a photo viewer. Currently, all you get is a
+list of files, which when clicked on either download the file directly,
+or which opens a fullscreen view of an image. This is difficult for
+viewing photos, to put it nicely.</p>
+<p>But dufs includes a really easy-to-use API, which can be accessed
+from a static HTML file (which incidentally, it can serve with no issues
+too!). And to that end, I decided to write my own viewer.</p>
+<p>The following code is - well I shan’t use the word I have in mind
+currently, but it’s <strong>SERIOUSLY TERRIBLE</strong>. It takes ages
+to load, doesn’t have any navigation whatsoever, and looks like raw
+unstyled HTML - because it is.</p>
+<p>Here’s how to get it working:</p>
+<ol>
+<li><p>Copy the below HTML and paste it into a blank html file on your
+dufs server, somewhere you’ll remember about it when you need to look at
+photos. I put it in “/photos”, but it’s up to you.</p></li>
+<li><p>Navigate (in dufs) to any folder containing photos. Copy the full
+URL in your browser’s bar.</p></li>
+<li><p>Go to the viewer HTML file, and open it. In the “Base URL” box,
+paste the URL you just copied. Click “Load photos”, and see your photos
+load - in full resolution so very slowly!</p></li>
+</ol>
+<p>NB. You can click the photos to download them or open the files,
+whichever is your browser’s default.</p>
+<p>This is some horrendously lazy code, I realise that! Sometimes all
+you need is a quick-and-dirty solution, and this does the trick! Feel
+free to improve on it and share it again if you wish. <a
+href="/contact">Contact me</a> if you do anything impressive!</p>
+<h2 id="code">Code</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;dufs Viewer&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input type=&quot;text&quot; name=&quot;base-url&quot; id=&quot;tbox-base-url&quot; placeholder=&quot;Base URL&quot;&gt;
+    &lt;button onclick=&quot;loadPhotos()&quot;&gt;Load Photos&lt;/button&gt;
+    &lt;div id=&quot;image-collection&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    function loadPhotos() {
+        baseURL = decodeURI(document.getElementById(&quot;tbox-base-url&quot;).value)
+        document.getElementById(&quot;image-collection&quot;).innerHTML = &quot;&quot;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 &amp;&amp; this.status == 200) {
+                obj = JSON.parse(xhttp.responseText)
+                console.log(obj)
+                for (let i = 0; i &lt; obj.paths.length; i++) {
+                    const element = obj.paths[i];
+                    if (element.path_type == &quot;File&quot;) {
+                        document.getElementById(&quot;image-collection&quot;).innerHTML += &quot;&lt;a href=&#39;&quot; + baseURL + element.name + &quot;&#39; target=&#39;_blank&#39;&gt;&lt;img src=&#39;&quot; + baseURL + element.name + &quot;&#39; class=&#39;viewer-image&#39; loading=&#39;lazy&#39;&gt;&lt;/a&gt;&quot;
+                    }
+                }
+            }
+        };
+        xhttp.open(&quot;GET&quot;, baseURL + &quot;?json&quot;, true);
+        xhttp.send(); 
+    }
+&lt;/script&gt;
+&lt;style&gt;
+    .viewer-image {
+        width: 30%;
+        padding-right: 10px;
+    }
+&lt;/style&gt;
+&lt;/html&gt;</code></pre>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/indie-web">indie-web</a>
+<a class="tag" href="https://tomprobyn.uk/tags/web">web</a>
+<a class="tag" href="https://tomprobyn.uk/tags/coding">coding</a>
+<a class="tag" href="https://tomprobyn.uk/tags/technology">technology</a>
+<a class="tag" href="https://tomprobyn.uk/tags/projects">projects</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2025. <a href="https://tomprobyn.uk/licenses">Licenses and "AI"</a>. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Site Host's Privacy Policy</a></p>
+</footer>
+</body>
+</html>
