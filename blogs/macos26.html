@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <meta name="dcterms.date" content="2025-09-16" />
+  <title>I’ve had enough of i/Watch/MacOS 26 already | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://tomprobyn.uk/styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+  <a class="skiplink" href="#maincontent">Skip to main content</a>
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/contact">/contact</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title" id="maincontent">I’ve had enough of i/Watch/MacOS 26
+already</h1>
+<p class="date">16 September 2025</p>
+</header>
+<p>What’s it been? Less than 24 hours definitely! Apple’s new operating
+system versions have always been pretty good for me, especially being in
+the audio world, where everybody knows that you never upgrade a Mac for
+at least 3 months after an OS release lest Pro Tools spontaneously
+combusts - or something like that. I was pretty early on xOS 26 in that
+sense (I’m calling it xOS because it’s sort of unified now, everything
+is 26 rather than different versions of everything).</p>
+<p>Anyway, I hate liquid glass. That’s the main thing. And I don’t hate
+the way it looks - much at least. It’s fine, not my personal choice of
+aesthetic direction - as you can probably tell from the design of this
+site - but nontheless, it’s pretty graphically inoffensive. Graphically
+though - I hate it as a concept ultimately. There’s been a few articles
+I’ve read on the matter, but the general logical concencus is that it
+must be more computationally heavy than - for instance - blurring. For
+blur, the simplest kind at least, you effectively run a space-domain
+lowpass filter over the pixels, allowing their vales to be influenced by
+their neighbours multiplied by a fractional factor proportional to the
+distance of the neighbouring pixel. More complex algorithms exist, but
+blur is relatively simple to compute.</p>
+<p>Glass effects, on the other hand, are not. It’s impossible to say
+without seeing the source code, but I assume Apple is probably using
+some sort of ray-tracing system, I certainly haven’t managed to come up
+with any way this sort of thing would be possible using traditional
+mathematical tranformations. Having said that, my programming background
+is web technologies and a bit of audio DSP, so I’d have no idea how to
+do this sort of thing anyway. The point is though that ultimately, this
+<em>must</em> be using more resources than the simple blur effect which
+MacOS had in previous versions was using. I suspect this based on
+semi-empirical evidence even! That is - when I turn on liquid glass on
+xOS 26, my battery acts like a lead balloon. When I turn it off, it’s
+pretty much back to how it was, if not a little better even!</p>
+<p>As a trained UX designer, everything is screaming at me to be excited
+about this new more natural direction of UI design, but I’m not. I’m
+disapointed in it. Granted, I am not a typical UX designer, especially
+given that I <em>still</em> think the terminal is the best UI available,
+but ultimately, I don’t see how a feature which uses more battery for
+almost no real benefit helps me.</p>
+<p>I’d personally prefer it if my computer got out my way and had as
+little impact in my life as possible. That was part of the reason I
+bought a Mac in the first place, I was sick to death of nursing Windows,
+and hadn’t quite transitioned my workflows over to something that could
+support Linux at that point. Macs seemed to shut up and just let me
+work, and for the most part, it has done that fantastically.</p>
+<p>But now, it feels like it’s trying to grab too much of my attention
+with shiny visual things, and in so doing, it’s eating into the
+computational resources I bought for doing <em>my</em> things with. For
+now, I’ve disabled liquid glass, and it’s all gone back to perfectly
+visually (and computationally) acceptable blurs now, and my machine
+feels a lot less laggy than it did!</p>
+<p><strong>I MOVED TO LINUX</strong> blog when? Not for a while. It’d be
+quite ironic to complain about disliking liquid glass for its energy
+impact and then say I’m throwing away a perfectly good laptop. But when
+this laptop does eventually die, take it as a warning sign that I have
+recently moved over to an OS-agnostic file storage system, and that I am
+trying to move towards using REAPER (which runs on Linux) as my main
+DAW, rather than Logic. There may be another chapter to this story.</p>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/technology">technology</a>
+<a class="tag" href="https://tomprobyn.uk/tags/thoughts">thoughts</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2025. <a href="https://tomprobyn.uk/licenses">Licenses and "AI"</a>. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Site Host's Privacy Policy</a></p>
+</footer>
+</body>
+</html>
