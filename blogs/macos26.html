@@ -58,10 +58,12 @@ though - I hate it as a concept ultimately. There’s been a few articles
 I’ve read on the matter, but the general logical concencus is that it
 must be more computationally heavy than - for instance - blurring. For
 blur, the simplest kind at least, you effectively run a space-domain
-lowpass filter over the pixels, allowing their vales to be influenced by
-their neighbours multiplied by a fractional factor proportional to the
-distance of the neighbouring pixel. More complex algorithms exist, but
-blur is relatively simple to compute.</p>
+lowpass filter over the pixels, allowing their values to be influenced
+by their neighbours multiplied by a fractional factor proportional to
+the distance of the neighbouring pixel <a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.
+More complex algorithms exist, but blur is relatively simple to
+compute.</p>
 <p>Glass effects, on the other hand, are not. It’s impossible to say
 without seeing the source code, but I assume Apple is probably using
 some sort of ray-tracing system, I certainly haven’t managed to come up
@@ -99,6 +101,31 @@ this laptop does eventually die, take it as a warning sign that I have
 recently moved over to an OS-agnostic file storage system, and that I am
 trying to move towards using REAPER (which runs on Linux) as my main
 DAW, rather than Logic. There may be another chapter to this story.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I’ll be honest, dearest reader, I mostly made that up
+from very foggy memories and a bit of logical reasoning. If you think
+about it though, that’s what blur <em>must</em> be, because objects
+begin to bloom and exhibit influence outside of their spacial
+constraints. Turns out this kind of blur has a name - <a
+href="https://en.wikipedia.org/wiki/Gaussian_blur">Gaussian Blur</a>.
+And it is literally just that too - convolving a lowpass filter over a
+pixel matrix! Quite pleased with myself for figuring that out but also
+equally should give myself a slap on the wrist for not properly
+researching before publishing. Also also - given that this is
+effectively just DSP like I’ve used in audio programming before, it
+makes me wonder if there’s the same sort of debates on mathematical
+filters for images as there are for audio filters. Do IIR blurs “look
+more analog”, just like audio IIR filters supposedly sound? Do certain
+filters exhibit pre-ringing like minimum phase audio filters do? I’m
+assuming not because I’d reckon that’s purely a by-product of operating
+in the time domain. But still, I’d love to see these debates if they
+exist!<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 <hr>
 <p>Tagged as: 
 <a class="tag" href="https://tomprobyn.uk/tags/technology">technology</a>
