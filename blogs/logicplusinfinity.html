@@ -58,6 +58,15 @@ probably an overflow in one of Logic’s stock plugins, given that I’ve
 not seen this in other DAWs recently (though I did once experience it
 with an FL Studio stock plugin; I suspect a similar sort of thing was at
 fault). But what does any of that even mean?</p>
+<h2 id="an-analogy">An analogy</h2>
+<p>Warning: this is a pretty technical article. Imagine it like this: If
+you watch a video of the sun, do the billions of gigawatts of energy it
+produces get spewed out of your screen and engulf your house in flames?
+Of course not! Your screen can only produce a set level of brightness,
+and after that, it will simply clip (which is called “overexposure” in
+video/photo terms). We know that if you put the highest brightness value
+you can (#ffffff) into a screen, you get white. You are doing exactly
+the same with your audio interface!</p>
 <h2 id="a-quick-guide-to-digital-audio">A quick guide to digital
 audio</h2>
 <p>You’ve heard of audio being 16-bit or 24-bit, possibly even 32 or 64
@@ -65,16 +74,16 @@ bit floating point. When your DAW records or processes audio, it places
 a sample point at a fixed position in the time domain, equivilent to
 once every 1/samplerate seconds. These sample points represent the
 amplitude of the wave at that point. However, given that the analogue
-value coming in from your mic or guitar or what have you is an
+value coming in from your mic or guitar or what-have-you is an
 indiscrete value (a bit like height rather than a discrete value like
 shoe size), and your computer cannot store an indiscrete value, it must
 be quantised.</p>
 <p>The accuracy of that quantisation defines how much data, and thus
-storage space and bandwidth, is needed. 16-bit, which is perfectly
+storage space and bandwidth, is needed. 16-bit, which is a perfectly
 acceptable resolution in most cases, has 2^16 individual “voltage
 levels” it can represent amplitude with, 65535 levels in real terms. At
 that point, the human ear cannot distinguish between level 65535 and
-65536. These levels are so similar that our ears write them off at
+65536. These levels are so similar that our ears write them off as
 basically the same thing, meaning that you don’t hear any sort of
 distortion.<a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a></p>
@@ -89,9 +98,11 @@ much more sound you give them, they will never go above the value of
 65536, and will just flatten any waveform above that value (digital
 clipping). If you are using a “dumb” system, your programme will pretend
 there is a 17th bit, and thus set the value to 65537:
-<code>00000000 00000000 1</code>. But given that this 17th bit doesn’t
-exist in your hardware, it gets deleted:<code>00000000 00000000</code>,
-and the number you end up with is a big fat zero.</p>
+<code>00000000 00000000 1</code><a href="#fn3" class="footnote-ref"
+id="fnref3" role="doc-noteref"><sup>3</sup></a>. But given that this
+17th bit doesn’t exist in your hardware, it gets
+deleted:<code>00000000 00000000</code>, and the number you end up with
+is a big fat zero.</p>
 <p>And as a result of that, you’ve just created a discontinuity. By
 jumping from the highest possible voltage value to the lowest possible,
 what you’ve created is the same thing as when you forget to crossfade
@@ -116,9 +127,10 @@ sure.</p>
 <h2 id="db-really">+∞ dB, really???</h2>
 <p>No, not at all. Such things do not exist. Logic uses 64-bit float
 internally, which has stupidly ridiculous headroom. But the metering is
-relative to the output format you use, so when Logic tries to fit a 64
-bit signal which is very loud because of a bitrate mismatch into, say a
-16 or 24 bit output format, it just ends up clipping. Given this, Logic
+relative to the output format you use (because the format describes the
+headroom, and thus Full Scale), so when Logic tries to fit a 64 bit
+signal which is very loud because of a bitrate mismatch into, say a 16
+or 24 bit output format, it just ends up clipping. Given this, Logic
 just gives the value +∞ dB to say there is a lot of stuff above this
 that’s getting clipped off.</p>
 <p>Even the screenshots I’ve seen with +200dB aren’t really at +200dB.
@@ -130,19 +142,24 @@ seem to be using, and even if you are running your headphones through a
 5000 watt PA amplifier, they’d have burned out long before you reach
 anywhere near +200dB.</p>
 <p>+200dB means 200 decibels above the point at which the audio began
-clipping. In order to demonstrate this, get any sound in Logic, and add
-a bunch of gain plugins, each adding 24dB of gain. Enable them
-one-by-one with your interface/amp volume set extremely low. Notice how
-at some point, even though the number gets progressively higher, the
-sound stops getting louder, and only harmonics are added. Don’t try
-turning up your volume, you may burn out the voice coils in your
-speakers!</p>
+clipping (Full Scale - hence dB relative to FS - dbfs). In order to
+demonstrate this, get any sound in Logic, and add a bunch of gain
+plugins, each adding 24dB of gain. Enable them one-by-one with your
+interface/amp volume set extremely low. Notice how at some point, even
+though the number gets progressively higher in Logic, the sound stops
+getting louder, and only harmonics are added. Don’t try turning up your
+monitor volume, you may burn out the voice coils in your speakers!</p>
 <p>Effectively what we are doing here is causing a bitrate mismatch. We
 are putting too many bits into our 16/24 bit buffer, and they are
 getting clipped off, creating a loud waveform. But Logic, with its 64
 bits, can still see all of the clipped off stuff, and thus measure
-where, if we had infinite headroom, the peak level would be.</p>
-<p>But never will that reach your ears.</p>
+where, if we had 64-bit headroom, the peak level would be.</p>
+<p>But never will that reach your ears or your speakers.</p>
+<p>Equally never will these high digital values damage the digital
+processors (this is a question I saw somebody ask). A digital processor
+knows no difference between 0 and its highest possible buffer value,
+there is no difference<a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a> in voltage between these two.</p>
 <h2 id="practical-tips">Practical Tips</h2>
 <p>A lot of people suggest putting a limiter on the master. I don’t. For
 all I know, Limiter may be the plugin with the mismatch problem! But
@@ -185,6 +202,14 @@ role="doc-backlink">↩︎</a></p></li>
 but this is for demonstration purposes only, I’m trying to explain
 complex computer science to musicians.<a href="#fnref2"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Little-endian. Get over it. It’s better for
+demonstration.<a href="#fnref3" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Yes, there is a slight difference in voltage draw
+because of increased numbers of semiconductors being required, but if
+you’re technical enough to understand this, you’re technical enough to
+take the point and shut up!<a href="#fnref4" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 <hr>
