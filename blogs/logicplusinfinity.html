@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.scot/@tomprobyn">
+  <meta name="dcterms.date" content="2025-09-24" />
+  <title>+∞, Logic Pro and digital audio | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://tomprobyn.uk/styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+  <a class="skiplink" href="#maincontent">Skip to main content</a>
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/contact">/contact</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title" id="maincontent">+∞, Logic Pro and digital audio</h1>
+<p class="date">24 September 2025</p>
+</header>
+<p><em>N.B. This article is pure postulation based on previous
+experience and limited programming knowledge</em></p>
+<p>There’s been various discussions on Logic Pro forums recently which
+usually take a similar form to this. Somebody will post a photograph of
+their master fader with the readout at the top stating some ridiculous
+decibel number - possibly even +∞ dB, with the caption “That hurt”, or
+something similar. A number of people who have never seen this sort of
+relatively common thing before will reply in shock, some will reply with
+“this solution worked for me!”, but never once have I seen anybody
+explain what it is that is going on here, and why it is nowhere near as
+scary as it looks.</p>
+<p>My Computer-Sciencey postulation would be dodgy buffer logic,
+probably an overflow in one of Logic’s stock plugins, given that I’ve
+not seen this in other DAWs recently (though I did once experience it
+with an FL Studio stock plugin; I suspect a similar sort of thing was at
+fault). But what does any of that even mean?</p>
+<h2 id="a-quick-guide-to-digital-audio">A quick guide to digital
+audio</h2>
+<p>You’ve heard of audio being 16-bit or 24-bit, possibly even 32 or 64
+bit floating point. When your DAW records or processes audio, it places
+a sample point at a fixed position in the time domain, equivilent to
+once every 1/samplerate seconds. These sample points represent the
+amplitude of the wave at that point. However, given that the analogue
+value coming in from your mic or guitar or what have you is an
+indiscrete value (a bit like height rather than a discrete value like
+shoe size), and your computer cannot store an indiscrete value, it must
+be quantised.</p>
+<p>The accuracy of that quantisation defines how much data, and thus
+storage space and bandwidth, is needed. 16-bit, which is perfectly
+acceptable resolution in most cases, has 2^16 individual “voltage
+levels” it can represent amplitude with, 65535 levels in real terms. At
+that point, the human ear cannot distinguish between level 65535 and
+65536. These levels are so similar that our ears write them off at
+basically the same thing, meaning that you don’t hear any sort of
+distortion.<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<p>But, when you hit “voltage level” 65536, you can’t go to 65537. That
+simply won’t work, it’s a hard ceiling. In binary terms, you’ve set all
+of your 16 available bits to 1: <code>11111111 11111111</code><a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a>. You can’t just add another bit, or
+you’d be in 17-bit, and things just don’t work like that! What really
+happens is one of two things. Most DAWs will “hard clip” - no matter how
+much more sound you give them, they will never go above the value of
+65536, and will just flatten any waveform above that value (digital
+clipping). If you are using a “dumb” system, your programme will pretend
+there is a 17th bit, and thus set the value to 65537:
+<code>00000000 00000000 1</code>. But given that this 17th bit doesn’t
+exist in your hardware, it gets deleted:<code>00000000 00000000</code>,
+and the number you end up with is a big fat zero.</p>
+<p>And as a result of that, you’ve just created a discontinuity. By
+jumping from the highest possible voltage value to the lowest possible,
+what you’ve created is the same thing as when you forget to crossfade
+between two audio clips: a click. This is called a buffer overflow -
+because you tried to put more data into the buffer than it is capable of
+holding.</p>
+<h2 id="why-is-logic-trying-to-deafen-me">Why is Logic trying to deafen
+me?</h2>
+<p>Sometimes in audio, it can be useful to treat the sample value as 1-x
+rather than x. This means working from Full Scale down, rather than -∞
+up. In practical terms, this means inverting the buffer. If you invert
+the buffer after overflowing it, you will end up with all 1s. This is
+one possible way of a multitude that could result in the output value
+being all 1s.</p>
+<p>However, the signal this would output would be DC (0Hz). People
+describe loud distorted sounds. I’d suggest that this could possibly be
+a bitrate mismatch in a plugin - if a plugin is storing 32-bit values in
+a 24 bit buffer, this will have the effect of amplifying and digitally
+clipping that sound quite significantly. On reflection, this is probably
+the most likely explaination for what is happening here, but I can’t be
+sure.</p>
+<h2 id="db-really">+∞ dB, really???</h2>
+<p>No, not at all. Such things do not exist. Logic uses 64-bit float
+internally, which has stupidly ridiculous headroom. But the metering is
+relative to the output format you use, so when Logic tries to fit a 64
+bit signal which is very loud because of a bitrate mismatch into, say a
+16 or 24 bit output format, it just ends up clipping. Given this, Logic
+just gives the value +∞ dB to say there is a lot of stuff above this
+that’s getting clipped off.</p>
+<p>Even the screenshots I’ve seen with +200dB aren’t really at +200dB.
+Fine, maybe that is true internally, but as soon as logic puts that
+value down the wire to your audio interface, it will only produce the
+loudest sound it can produce. It could not physically ever produce
+anything over about 110dB through the normal headphones these people
+seem to be using, and even if you are running your headphones through a
+5000 watt PA amplifier, they’d have burned out long before you reach
+anywhere near +200dB.</p>
+<p>+200dB means 200 decibels above the point at which the audio began
+clipping. In order to demonstrate this, get any sound in Logic, and add
+a bunch of gain plugins, each adding 24dB of gain. Enable them
+one-by-one with your interface/amp volume set extremely low. Notice how
+at some point, even though the number gets progressively higher, the
+sound stops getting louder, and only harmonics are added. Don’t try
+turning up your volume, you may burn out the voice coils in your
+speakers!</p>
+<p>Effectively what we are doing here is causing a bitrate mismatch. We
+are putting too many bits into our 16/24 bit buffer, and they are
+getting clipped off, creating a loud waveform. But Logic, with its 64
+bits, can still see all of the clipped off stuff, and thus measure
+where, if we had infinite headroom, the peak level would be.</p>
+<p>But never will that reach your ears.</p>
+<h2 id="practical-tips">Practical Tips</h2>
+<p>A lot of people suggest putting a limiter on the master. I don’t. For
+all I know, Limiter may be the plugin with the mismatch problem! But
+more fundamentally, a limiter is not going to react quick enough. It is
+not designed to operate on the individual buffers of audio, but in a
+more musical way, across macrodynamics within the audio. Limiters will
+almost always introduce latency and could cause mixing issues for people
+who are not experienced in mixing into a nonlinear mixbus. Having said
+that, I love mixing into a hard limiter and almost always do it;
+irreverence is fun!</p>
+<p>REAPER has the solution, as is so often the case. In the settings is
+an option which will mute the mixbus instantly if any peak above a
+certain level is detected. I’ve got it set to the default of +18dbfs,
+which has always seemed sensible to me. Loud enough that I can do silly
+things with audio and overpower my limiter if I really want to, quiet
+enough that if a mismatch occurs, I won’t damage my speakers or
+ears.</p>
+<p>This works instantly, and on the buffer, meaning that an errant
+buffer will never reach your speakers. Every DAW should have this, but
+I’m sure doing this as a plugin would be extremely easy. In the
+meantime, keep your volume low. The final limiter your audio goes
+through is the knob on your audio interface or amp - YOU control the
+maximum voltage level of the output, Logic merely requests it.</p>
+<p>I hope this article has helped you understand what is going on with
+your audio, and why things like +200dB or +∞dB cannot exist, that your
+audio output level is limited by the maximum possible voltage value your
+amp can produce.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>To the nerdier amongst you, that is not to say that the
+distortion is not there - quantisation of an indiscrete value will
+<em>always</em> cause distortion, but in this case, the distortion is
+reduced to the point of being inaudible. Quantisation distortion of
+amplitude sounds cool though - and we have a name for it -
+bitcrushing!<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Yeah, yeah I’m aware that 65535 not 65536 you smartarse,
+but this is for demonstration purposes only, I’m trying to explain
+complex computer science to musicians.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/technology">technology</a>
+<a class="tag" href="https://tomprobyn.uk/tags/thoughts">thoughts</a>
+<a class="tag" href="https://tomprobyn.uk/tags/music">music</a>
+<a class="tag" href="https://tomprobyn.uk/tags/debunk">debunk</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2025. <a href="https://tomprobyn.uk/licenses">Licenses and "AI"</a>. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Site Host's Privacy Policy</a></p>
+</footer>
+</body>
+</html>
