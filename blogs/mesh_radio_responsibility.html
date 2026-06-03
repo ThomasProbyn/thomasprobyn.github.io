@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Personal Site" href="https://www.tomprobyn.uk/blogs/feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Tom Probyn's Notes" href="https://www.tomprobyn.uk/notes/feed.xml">
+  <link rel="me" href="https://mastodon.radio/@m7xxi">
+  <link rel="human-json" href="/human.json">
+  <title>Responsibility, the ethics of mesh radio and an impending sense of doom | Tom Probyn's Personal Site</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://tomprobyn.uk/styles.css" />
+</head>
+<body>
+<header id="title-block-header">
+  <a class="skiplink" href="#maincontent">Skip to main content</a>
+<nav>
+  <a href="https://tomprobyn.uk/">home</a>
+  <a href="https://tomprobyn.uk/me">/me</a>
+  <a href="https://tomprobyn.uk/now">/now</a>
+  <a href="https://tomprobyn.uk/contact">/contact</a>
+  <a href="https://tomprobyn.uk/everything">/everything</a>
+</nav>
+<h1 class="title" id="maincontent">Responsibility, the ethics of mesh
+radio and an impending sense of doom</h1>
+<p class="date">3rd June 2026</p>
+</header>
+<p>I am sat looking at a little blinking LED. This particular blinking
+LED is the sort of harsh white colour on which fridge manufacturers now
+seem so keen nowadays, the quality of light that makes your food look
+like it’s gone off no sooner than you’ve put it in there… But this
+blinking LED carries perhaps more consequences - each blink carries a
+meaning. This is because of what it is attached to: not a fridge, but a
+mesh radio router.</p>
+<p>Mesh radio, a form of low-power, decentralised and - most importantly
+- license exempt<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> radio network that seems to be doing
+the rounds both here in the UK, and, if the internet is to be believed,
+around the world. Currently, there are two main flavours in play:
+MeshTastic (less reliable over longer distances) and MeshCore (fast
+becoming the main platform and more reliable). There are also a number
+of fringe projects getting some attention, and hopefully Reticulum will
+soon get the love it deserves as it absolutely smokes both of the above
+mentioned projects in real-world performance!</p>
+<p>It works by having a very small and low powered microprocessor board,
+this has bluetooth built in and connects to your phone. You can send and
+receive messages on the phone, and when you have written a message and
+pressed “send” on the phone, it transmits the message via bluetooth to
+the board. The board has another radio on it - a LoRa radio (<em>or</em>
+Long Range), which operates at 868MHz in the UK and EU; frequencies vary
+around the world. The little board transmits this message at around 100
+milliwatts, almost no power in radio terms.</p>
+<p>However, this is precisely where the mesh element of the network
+comes in, as it is not the sole responsibility of this tiny board to get
+the message I have just sent to its destination. All it needs to do is
+get it to the next repeater, and that will then forward it to the next
+repeater, and so on until it reaches its destination. This is what is
+making mesh networking so popular, the fact that we now have an entirely
+decentralised encrypted messaging protocol that runs in its entirety on
+just the architecture of the people using the network. It is one of the
+greatest examples of socialist technology in use today. The
+aforementioned Reticulum project takes this idea and creates its own
+version of the Internet - <em>Nomadnet</em> - on top of this routing
+protocol.</p>
+<p>The blinking light though - that particular blinking light is
+attached to the MeshCore repeater which is currently in my room. This is
+why it matters, as thousands of messages pass through that repeater per
+day, and not many of them are <em>for</em> me or sent by me. But
+regardless, because of the way that mesh networking works, my node
+passes that message on. It actively transmits it.</p>
+<p>And this, dear reader, is where I find myself a little troubled by
+this concept. I saw somebody post an offensive message in the public
+channel on MeshCore a few days ago. I looked at the route that packet
+had taken through the network, and sure enough, my repeater had
+re-transmitted the packet. Was I responsible for that message then,
+given that I transmitted it through hardware I bought and paid for? What
+if it had been worse - what if it had been a Malicious Communication
+such as an incitement of violence or hatred based on a protected
+characteristic? That is markedly illegal, and again, I am operating a
+radio transmitter that anyone can transmit a public message through and
+amplify their thoughts!</p>
+<p>Since the British government had its first dallience with digital
+privacy around a decade ago, suggesting putting an encryption-breaking
+backdoor into apps like WhatsApp, the counter-arguement to me has been
+obvious. If you were the leader of an organised crime gang co-ordinating
+using a system which you knew the government had full unfettered access
+to, would you continue using that app? Or, would you choose to use one
+of the myriad of other encrypted messaging tools which don’t answer to
+government authority? My arguement has always been that breaking
+encryption <em>only</em> affects the everyday public, because the people
+in whom the government are proportedly interested in - let’s call a
+spade a spade: spying on - have long fled. And yes, there will always be
+the odd case where it was the key to finding genuinely horrifying
+criminal activity, but there always seem to be more cases in which this
+is not in fact the case.</p>
+<p>To be clear, I am very much in agreement with the <em>sentiment</em>
+of these pieces of legislation, the thing I find moronic - offensive
+even - is the mechanisation. I consider myself to be part of a
+generation failed utterly by people in authority on their regulation of
+digital matters (and given the UK government’s frankly deluded obsession
+with AI and putting datacentres all over my home county up in the North
+East of England, I feel more failed than <em>ever</em>). But the
+individual MPs who vote for legislation like this I feel very much see
+it <em>as</em> protecting young people from crime, and that is something
+I do in fact truly believe we should have done more about twenty years
+ago. But this is far, far, far from the answer.</p>
+<p>But, my worry is that legislation like this will push people
+interested in doing nefarious things into the darker corners of digital
+existence. Would, for instance, a completely decentralised, legal, and
+currently-popular-enough-that-the-extra-traffic-wouldn’t-be-suspicious
+encrypted messaging service which runs on hardware that costs less than
+a round of drinks be a safe haven for them?</p>
+<p>Currently, there is no way in which a node can be blocklisted from
+the entire network - that is effectively the point of decentralised
+technology! But as platforms such as the fediverse and mesh radio take
+off, the big question in open decentralised technology which the next
+decade will hopefully answer will be “how might we police this”? In the
+case of spam nodes (and there are starting to be a number of nodes whose
+sole purpose is simply to spam the public chat with nonsense) they will
+annoy enough people to get effectively blocklisted across the entire
+network if blocking nodes at network level became easier. But even if
+all the repeater owners in the area they were operating in decided to
+ringfence them in, all they’d need to do would be to put up their own
+strategically placed repeater, and they’d be back on the wider network
+like nothing happened. In fact, all they’d <em>actually</em> need to do
+would be to change their node identifier key. As far as I can tell this
+is software-generated and not connected to the actual hardware, so it
+would take them less than five minutes to come back online again.</p>
+<p><strong>The biggest problem with resilient networks is the fact that
+they are, shockingly, resilient.</strong></p>
+<p>But what if in fact a spam node wasn’t sending utter nonsense, but
+was in fact sending things which some people consider to be grossly
+offensive, but with which you happen to agree? What if this was the
+other way around? Something with which you vehemently disagree, but
+which your peers find acceptable? At what point is it ethical to block?
+A message will resiliently route itself around your block in any case,
+and so what’s even the point? The over-arching point here is that there
+are some serious issues to be considered.</p>
+<p>Importantly, there exist two congruant precedents for this sort of
+thing. Firstly, this is a digital platform, and as we are well aware,
+social media companies are not responsible for what their users post
+(well to a certain extent at least). This test holds up well here - I am
+not moderating what goes through my repeater because <em>I</em> am not
+publishing it. It is reasonably obvious that each packet I re-route is
+somebody else’s work, and has their node ID attatched to it. However,
+the fact remains that without me, their voice might not have reached
+quite as far. Secondly, I generally <em>can’t</em> see what people are
+transmitting. Granted, for the public channel, I could probably set up a
+blocklist of words not allowed through my repeater, but arguably that
+makes me a more active participant. What if there was an offensive
+message coded enough to get through my filter but easy enough to get the
+gist of? Not only would have I transmitted it, but I would have
+effectively given it my ascent by actively <em>chosing</em> not to block
+it, rather than just passively passing it along as I do now.</p>
+<p>The other precedent for this might be that of amateur radio gateways
+and repeaters. These are solely the responsibility of the repeater’s
+registered keeper, and in the case that they get jammed or become a
+consistent transmitting place for pirates, they have to be shut down,
+generally within two hours of a report coming in. I’m not sure how
+relevant this is to my situation though, as this is mainly meant to stop
+transmitter laundering, whereby one can use an unlicensed radio to
+transmit through a licensed repeater. However the same rules do apply to
+iGates and digipeaters transmitting offensive messages - the
+responsibility falls on the licesnsed keeper.</p>
+<p>This leads me to feel a little gloomy about the future of
+decentralised technologies. Their remaining pleasant and kind places to
+be relies on the goodwill of the people, and when that works it is
+utterly fantastic. Currently, in fact, MeshCore is an exciting place to
+be, with lots of people having fun experimenting with radio. Mesh radio
+is one of the things that inspired me to do my amateur exam and be
+allowed to explore yet more powerful radio systems! But, the occasional
+offensive message and bit of spam hitting the public channel has made me
+realise quite how much mesh radio’s resilience can very quickly go from
+greatest strength to fatal flaw.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>License <em>Exempt</em>. - Differs from license free by
+virtue of the fact that there is still technically a license in play,
+but that any radio that conforms to the power and form restrictions of
+that license is automatically permitted for use on that band. The best
+example is how any pre-built PMR446 radio is automatically licensed for
+that band but a Baofeng radio most definitely is not.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<hr>
+<p>Tagged as: 
+<a class="tag" href="https://tomprobyn.uk/tags/radio">radio</a>
+<a class="tag" href="https://tomprobyn.uk/tags/technology">technology</a>
+<a class="tag" href="https://tomprobyn.uk/tags/privacy">privacy</a>
+<a class="tag" href="https://tomprobyn.uk/tags/low-tech">low-tech</a>
+<a class="tag" href="https://tomprobyn.uk/tags/thoughts">thoughts</a>
+</p>
+<footer>
+  <p>Contents © Tom Probyn 2026. <a href="https://tomprobyn.uk/licenses">Licenses and "AI"</a>. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">Site Host's Privacy Policy</a></p>
+</footer>
+</body>
+</html>
